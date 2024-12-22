@@ -1,5 +1,16 @@
 import { createTheme } from "@mantine/core";
 
 export const theme = createTheme({
-  /* Put your mantine theme override here */
+  components: {
+    AppShell: {
+      defaultProps: {
+        padding: "xl",
+        header: { height: 50 },
+        navbar: {
+          width: 400,
+        },
+        withBorder: false,
+      },
+    },
+  },
 });

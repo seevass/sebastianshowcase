@@ -1,0 +1,23 @@
+.projectLink{
+    background-color: transparent !important;
+    transform: translateX(-0.75em);
+}
+
+.projectLink .mantine-NavLink-label {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.projectLink .mantine-NavLink-label:hover {
+    color: var(--main-hot-pink-color);
+    transition: color 0.3s ease;
+}
+
+.projectLinkTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--main-header-color);
+}
+
+
+

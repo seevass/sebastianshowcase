@@ -1,0 +1,7 @@
+.overlapping-image {
+    z-index: 2;
+}
+
+.background-image {
+    z-index: 1;
+}

@@ -1,0 +1,28 @@
+:root {
+    --main-bg-color: #fff4e2;
+    --main-text-color: #ffb800;
+    --main-header-color: #393939;
+    --main-pink-color:#ff9188;
+    --main-blue-color:#3d6fbf;
+    --main-hot-pink-color:#f75d64;
+    --transparent-color: transparent;
+  }
+  
+  .main, .header, .navBar, .aside{
+    background-color: var(--main-bg-color) !important;
+  }
+  
+  .footer {
+    background-color: var(--transparent-color) !important;
+  }
+  
+  .nameTitle {
+    color: var(--main-header-color);
+    padding-left: 13px;
+    padding-top: 20px;
+  }
+  
+  .mantine-Image-root {
+    user-select: none;
+    pointer-events: none;
+  }
