@@ -12,10 +12,16 @@ import PhotographyImage from '../assets/PhotographyImage.gif';
 
 import graphicMask from "../assets/Personal-Website-TV.png"
 
+import { theme } from '../theme'; 
+
 function ProjectSelector() {
   const [imageSrc, setImageSrc] = useState(TempImage);
-  const isMobile = useMediaQuery('(max-width: 990px)');
-  const breakpoint = isMobile ? '10px' : '400px';
+  const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
+  const text_breakpoint_right = isMobile ? '10px' : '300px';
+  const text_breakpoint_left = isMobile ? '0px' : '10px';
+  const img_breakpoint_right = isMobile ? '0px' : '150px';
+  const img_breakpoint_left = isMobile ? '0px' : '150px';
+  const breakpoint_top = isMobile? '50px' : '0px';
 
   const handleImageChange = (newImageSrc: string) => {
     setImageSrc(newImageSrc);
@@ -23,10 +29,10 @@ function ProjectSelector() {
 
   return (
     <Stack 
-      align='stretch'
+      align= {isMobile ? 'flex-start' : 'stretch' }
       justify='flex-start' 
 
-      style={{ paddingRight: breakpoint }}>
+      style={{ paddingRight: text_breakpoint_right, paddingLeft: text_breakpoint_left, paddingTop: breakpoint_top}}>
       <Group justify='space-between' align='flex-start'>
         <ProjectList 
           title="Projects"
@@ -46,8 +52,8 @@ function ProjectSelector() {
            setImageSrc={handleImageChange} // Pass the function to handle image change
         />
       </Group>
-      <Image src={graphicMask} alt="graphicOverlay" style={{maxWidth: '100%', maxHeight: '100%', transform: ''}} className="overlapping-image"/>
-      <Image src={imageSrc} alt="project preview" fit="contain" style={{ maxWidth: '100%', maxHeight: '100%', transform: 'translate(0%, -100%' }} className="background-image"/>
+      <Image src={graphicMask} alt="graphicOverlay" style={{paddingLeft: img_breakpoint_left, paddingRight: img_breakpoint_right, maxWidth: '100%', maxHeight: '100%', transform: ''}} className="overlapping-image"/>
+      <Image src={imageSrc} alt="project preview" fit="contain" style={{ paddingLeft: img_breakpoint_left, paddingRight: img_breakpoint_right, maxWidth: '100%', maxHeight: '100%', transform: 'translate(0%, -105%)' }} className="background-image"/>
 
     </Stack>
   );

@@ -26,3 +26,8 @@
     user-select: none;
     pointer-events: none;
   }
+
+  .mantine-Burger-root {
+    --burger-line-size: 5px;
+    --burger-color: var(--main-text-color)
+  }

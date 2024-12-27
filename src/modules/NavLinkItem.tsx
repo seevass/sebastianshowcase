@@ -3,7 +3,7 @@ import { NavLink } from '@mantine/core';
 import './NavLinkItem.css';
 import { getRandomHoverColor } from '../helpers/colorUtils';
 
-const BASE_PATH = '/sebastian-showcase'; // Global base path
+const BASE_PATH = '/sebastian-showcase'; // Global base path for GitHub Pages
 
 interface NavLinkItemProps {
   to: string;
@@ -24,8 +24,14 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
     setHoverColor(null);
   };
 
-  // Prepend the base path to the `to` prop if it's not already an external URL
-  const adjustedHref = isExternal ? to : `${BASE_PATH}${to}`;
+  // Adjust internal link to add the base path and hash prefix
+  const adjustedHref = isExternal
+    ? to
+    : to.startsWith('mailto:') // Check if it's a mailto link
+    ? to // Directly use the mailto link as is
+    : to.endsWith('.pdf') // Check if it's a PDF or another file
+    ? `${BASE_PATH}/${to}` // Append the base path for the PDF file
+    : `${BASE_PATH}#${to}`; // For regular routes with hash
 
   return (
     <NavLink

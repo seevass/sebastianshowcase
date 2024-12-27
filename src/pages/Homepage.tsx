@@ -8,7 +8,7 @@ import {
     Space,
 } from "@mantine/core";
 
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure} from "@mantine/hooks";
 
 import "./Homepage.css";
 import { theme } from "../theme";
@@ -29,7 +29,7 @@ function Homepage() {
             AppShell: {
                 defaultProps: {
                   navbar: {
-                    breakpoint: "md",
+                    breakpoint: "lg",
                     collapsed: {
                       mobile: !opened,
                     },
@@ -49,7 +49,7 @@ function Homepage() {
             <AppShell layout='alt'>
                 <AppShell.Header className="header">
                     <Group style={{ padding: "20px" }}>
-                        <Image src={nameLogo} h={27} w="auto" hiddenFrom="md"/>
+                        <Image src={nameLogo} h={27} w="auto" hiddenFrom="lg"/>
                         <div
                             style={{
                             alignItems: "flex-end",
@@ -60,9 +60,8 @@ function Homepage() {
                             <Burger
                             //opened={opened}
                             onClick={toggle}
-                            hiddenFrom="md"
+                            hiddenFrom="lg"
                             size="lg"
-                            color="yellow"
                             style={{ padding: "10px",}}
                             />
                         </div>
@@ -80,20 +79,19 @@ function Homepage() {
                         <Burger
                         opened={opened}
                         onClick={toggle}
-                        hiddenFrom="md"
+                        hiddenFrom="lg"
                         size="xl"
-                        color="yellow"
                         style={{paddingRight: "67px"}}
                         />
                     </div>
-                    <Space h="sm" />
-                    <img src={nameLogo} alt="Background Image" className="background-image" />
+                    <Space h="sm" visibleFrom="lg"/>
+                    <Image src={nameLogo} style={{maxWidth: '50%', transform:'translate(0%, 0%)'}}/>
                     <Space h="sm" />
                     <Title className="nameTitle" style={{fontSize: "4rem"}}> Sebastian Cruz</Title>
                     <Space h="sm" />
 
-                    <NavLinkItem to="/about" label="About" />
-                    <NavLinkItem to="/resume.pdf" label="Resume/CV" />
+                    <NavLinkItem to="about" label="About" />
+                    <NavLinkItem to="resume.pdf" label="Resume/CV" />
                     <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>
                     <NavLinkItem to="https://github.com/seevass" label="GitHub" isExternal />
                     <NavLinkItem to="mailto:cruzseabass@gmail.com" label="Contact" />
@@ -104,13 +102,13 @@ function Homepage() {
                 </AppShell.Main>
 
                     <AppShell.Aside
-                    visibleFrom="md" className="aside">
-                        <Image src={tattooGif} w="390" 
+                    visibleFrom="lg" className="aside">
+                        <Image src={tattooGif} w="300" 
                         style={{maxWidth: '100%', maxHeight: '100%', transform: '', paddingRight:'20px'}} />
                     </AppShell.Aside>
 
                     <AppShell.Footer
-                    hiddenFrom="md" className="footer"> 
+                    hiddenFrom="lg" className="footer"> 
                         <Image src={tattooGifSideways} h={300} w="auto"
                         style={{maxWidth: '100%', maxHeight: '100%', transform: ''}} />
                     </AppShell.Footer>
