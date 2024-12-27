@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; URL=/sebastian-showcase/" />
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
-</html>
+<script type="text/javascript">
+    var pathname = window.location.pathname;
+    var redirectPath = pathname.startsWith('/sebastian-showcase')
+      ? '/sebastian-showcase/index.html'
+      : '/index.html';
+    window.location.replace(redirectPath + '?' + pathname + window.location.search);
+  </script>
+  
