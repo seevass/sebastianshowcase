@@ -30,7 +30,7 @@ function ProjectSelector() {
 
   return (
     <Stack 
-      align= {isMobile ? 'flex-start' : 'stretch' }
+      align= {isMobile ? 'stretch' : 'stretch' }
       justify='flex-end' 
 
       style={{ paddingRight: text_breakpoint_right, paddingLeft: text_breakpoint_left, paddingTop: breakpoint_top}}>
@@ -41,14 +41,14 @@ function ProjectSelector() {
           </Text>
           <ProjectList
             links={[
-              ['#/keyboardwarrior', 'Keyboard Warrior', KeyboardWarriorImage],
-              ['#/quickcast', 'Quickcast', QuickcastImage],
-              ['#/blendify', 'Blendify', BlendifyImage],
+              ['keyboardwarrior', 'Keyboard Warrior', KeyboardWarriorImage],
+              ['quickcast', 'Quickcast', QuickcastImage],
+              ['blendify', 'Blendify', BlendifyImage],
             ]}
             setImageSrc={handleImageChange} // Pass the function to handle image change
-            style={{
-              columnCount: isMobile ? 2 : 1,
-            }}
+            // style={{
+            //   columnCount: isMobile ? 2 : 1,
+            // }}
           />
         </div>
         <div>
@@ -57,15 +57,15 @@ function ProjectSelector() {
           </Text>
           <ProjectList
             links={[
-              ['#/photography', 'Photography', PhotographyImage],
-              ['#/nishikigoi', 'Nishikigoi', PhotographyImage],
-              ['#/graphicdesign', 'Graphic Design', PhotographyImage],
-              ['#/keyboards', 'Keyboards', PhotographyImage],
+              ['photography', 'Photography', PhotographyImage],
+              ['nishikigoi', 'Nishikigoi', PhotographyImage],
+              ['graphicdesign', 'Graphic Design', PhotographyImage],
+              ['keyboards', 'Keyboards', PhotographyImage],
 
             ]}
             setImageSrc={handleImageChange} // Pass the function to handle image change
             style={{
-              columnCount: isMobile ? 2 : 2,
+              columnCount: isMobile ? 1 : 2,
             }}
           />
         </div>

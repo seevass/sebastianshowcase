@@ -12,13 +12,15 @@ interface ProjectListProps {
     setImageSrc: (imageSrc: string) => void;
     style?: React.CSSProperties;
 }
-
+const BASE_PATH = '/sebastian-showcase';
 
 const ProjectList: React.FC<ProjectListProps> = ({ title, links, setImageSrc, style }) => {
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
     const navlink_button_breakpoint = isMobile ? '2rem' : '2rem';
-    const link_width_breakpoint = isMobile ? '400px' : 'auto';
+    const link_width_breakpoint = isMobile ? '300px' : 'auto';
     
+    const adjustedHref = (href: string) => `${BASE_PATH}#${href}`;
+
     return (
         <div
             style={{
@@ -43,7 +45,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ title, links, setImageSrc, st
                                 fontSize: navlink_button_breakpoint,
                             },
                         })}
-                        href={href}
+                        href={adjustedHref(href)}
                         label={label}
                         onMouseEnter={() => setImageSrc(image)}
                     />

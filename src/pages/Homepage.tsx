@@ -90,7 +90,7 @@ function Homepage() {
                     <Title className="nameTitle" style={{fontSize: "3.5rem"}}> Sebastian Cruz</Title>
                     <Space h="sm" />
 
-                    <NavLinkItem to="about" label="About" />
+                    <NavLinkItem to="about-me" label="About" />
                     <NavLinkItem to="resume.pdf" label="Resume/CV" />
                     <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>
                     <NavLinkItem to="https://github.com/seevass" label="GitHub" isExternal />

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      if (window.location.pathname === '/sebastian-showcase' || '/sebastian-showcase/' && !window.location.hash) {
+        window.location.replace('/sebastian-showcase#welcomehome');
+      }
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta
