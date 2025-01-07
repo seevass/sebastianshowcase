@@ -87,7 +87,7 @@ function Homepage() {
                     <Space h="sm" visibleFrom="lg"/>
                     <Image src={nameLogo} style={{maxWidth: '50%', transform:'translate(0%, 0%)'}}/>
                     <Space h="sm" />
-                    <Title className="nameTitle" style={{fontSize: "4rem"}}> Sebastian Cruz</Title>
+                    <Title className="nameTitle" style={{fontSize: "3.5rem"}}> Sebastian Cruz</Title>
                     <Space h="sm" />
 
                     <NavLinkItem to="about" label="About" />

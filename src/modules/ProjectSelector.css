@@ -5,3 +5,8 @@
 .background-image {
     z-index: 1;
 }
+
+.projectTitle {
+    font-weight: 700;
+    color: var(--main-header-color)
+}

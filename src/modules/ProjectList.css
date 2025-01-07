@@ -4,8 +4,8 @@
 }
 
 .projectLink .mantine-NavLink-label {
-    font-size: 2.5rem;
     font-weight: 700;
+    color: var(--main-blue-color);
 }
 
 .projectLink .mantine-NavLink-label:hover {
@@ -14,7 +14,6 @@
 }
 
 .projectLinkTitle {
-    font-size: 3rem;
     font-weight: 700;
     color: var(--main-header-color);
 }

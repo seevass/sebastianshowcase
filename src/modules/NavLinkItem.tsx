@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from '@mantine/core';
 import './NavLinkItem.css';
 import { getRandomHoverColor } from '../helpers/colorUtils';
+import { useMediaQuery } from '@mantine/hooks';
+import { theme } from '../theme'; 
 
 const BASE_PATH = '/sebastian-showcase'; // Global base path for GitHub Pages
 
@@ -33,6 +35,9 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
     ? `${BASE_PATH}/${to}` // Append the base path for the PDF file
     : `${BASE_PATH}#${to}`; // For regular routes with hash
 
+    const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
+    const navbar_font_size = isMobile ? '2.5rem' : '3rem';
+    const navbar_gap = isMobile ? '3rem' : '4.5rem';
   return (
     <NavLink
       className="navLink"
@@ -41,9 +46,14 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
       href={adjustedHref}
       target={isExternal ? '_blank' : undefined} // Opens in a new tab if external
       rel={isExternal ? 'noopener noreferrer' : undefined} // Security for external links
-      style={{ color: hoverColor || 'var(--main-text-color)' }}
+      style={{ color: hoverColor || 'var(--main-text-color)', fontSize: navbar_gap }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      styles={{
+        label: {
+          fontSize: navbar_font_size,
+        },
+      }}
     />
   );
 };
