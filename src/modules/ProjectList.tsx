@@ -16,7 +16,7 @@ const BASE_PATH = '/sebastian-showcase';
 
 const ProjectList: React.FC<ProjectListProps> = ({ title, links, setImageSrc, style }) => {
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
-    const navlink_button_breakpoint = isMobile ? '2rem' : '2rem';
+    const navlink_button_breakpoint = isMobile ? '2rem' : '2.19rem';
     const link_width_breakpoint = isMobile ? '300px' : 'auto';
     
     const adjustedHref = (href: string) => `${BASE_PATH}#${href}`;

@@ -10,10 +10,10 @@ import { theme } from '../theme';
 function ProjectSelector() {
   const [imageSrc, setImageSrc] = useState(images.tvdefault);
   const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
-  const text_breakpoint_right = isMobile ? '10px' : '300px';
+  const text_breakpoint_right = isMobile ? '10px' : '265px';
   const text_breakpoint_left = isMobile ? '10px' : '10px';
-  const img_breakpoint_right = isMobile ? '0px' : '40px';
-  const img_breakpoint_left = isMobile ? '0px' : '40px';
+  const img_breakpoint_right = isMobile ? '0px' : '100px';
+  const img_breakpoint_left = isMobile ? '0px' : '100px';
   const breakpoint_top = isMobile? '50px' : '0px';
   const navlink_title_breakpoint = isMobile ? '2.5rem' : '3rem';
 

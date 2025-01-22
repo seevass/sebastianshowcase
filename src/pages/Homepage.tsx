@@ -6,6 +6,7 @@ import {
     Group, 
     Title,
     Space,
+    Stack,
 } from "@mantine/core";
 
 import { useDisclosure, useMediaQuery} from "@mantine/hooks";
@@ -89,11 +90,15 @@ function Homepage() {
                     <div style={{transform: navbarMobile}}>
                         <Title className="nameTitle non-selectable" style={{fontSize: "3.5rem"}}> Sebastian Cruz</Title>
                         <Space h="sm" />
-                        <NavLinkItem to="about-me" label="About" />
-                        <NavLinkItem to="resume.pdf" label="Resume/CV" />
-                        <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>
-                        <NavLinkItem to="https://github.com/seevass" label="GitHub" isExternal />
-                        <NavLinkItem to="mailto:cruzseabass@gmail.com" label="Contact" />
+                        <Stack 
+                            gap='xl'
+                            style={{height: '60vh', overflow: 'auto'}}>
+                            <NavLinkItem to="aboutme" label="About" />
+                            <NavLinkItem to="resume.pdf" label="Resume/CV" />
+                            <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>
+                            <NavLinkItem to="https://github.com/seevass" label="GitHub" isExternal />
+                            <NavLinkItem to="mailto:cruzseabass@gmail.com" label="Contact" />
+                        </Stack>
                     </div>
                 </AppShell.Navbar>
 

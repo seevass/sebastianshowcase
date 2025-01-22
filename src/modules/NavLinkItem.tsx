@@ -37,7 +37,6 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
 
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
     const navbar_font_size = isMobile ? '2.5rem' : '3rem';
-    const navbar_gap = isMobile ? '3rem' : '4.5rem';
   return (
     <NavLink
       className="navLink"
@@ -46,7 +45,7 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
       href={adjustedHref}
       target={isExternal ? '_blank' : undefined} // Opens in a new tab if external
       rel={isExternal ? 'noopener noreferrer' : undefined} // Security for external links
-      style={{ color: hoverColor || 'var(--main-text-color)', fontSize: navbar_gap }}
+      style={{ color: hoverColor || 'var(--main-text-color)'}}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       styles={{
