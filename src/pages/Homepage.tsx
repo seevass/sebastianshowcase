@@ -8,21 +8,20 @@ import {
     Space,
 } from "@mantine/core";
 
-import { useDisclosure} from "@mantine/hooks";
+import { useDisclosure, useMediaQuery} from "@mantine/hooks";
+
 
 import "./Homepage.css";
 import { theme } from "../theme";
-
-
-import nameLogo from "../assets/streamText.gif";
-import tattooGif from "../assets/Personal-Website-Gif.gif"
-import tattooGifSideways from "../assets/Personal-Website-Gif-Sideways.gif"
+import { images } from '../helpers/images.ts';
 
 import NavLinkItem from "../modules/NavLinkItem";
 import ProjectSelector from "../modules/ProjectSelector";
 
 function Homepage() {
     const [opened, { toggle }] = useDisclosure(false);
+    const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
+    const navbarMobile = isMobile ? "translate(0%, -5%)" : "translate(0%,0%)";
 
     const navbarThemeOverride = {
         components: {
@@ -49,7 +48,7 @@ function Homepage() {
             <AppShell layout='alt'>
                 <AppShell.Header className="header">
                     <Group style={{ padding: "20px" }}>
-                        <Image src={nameLogo} h={27} w="auto" hiddenFrom="lg"/>
+                        <Image src={images.nametitle} h={27} w="auto" hiddenFrom="lg" style={{transform:'translate(10%, 0%)'}}/>
                         <div
                             style={{
                             alignItems: "flex-end",
@@ -58,7 +57,6 @@ function Homepage() {
                             }}
                         >
                             <Burger
-                            //opened={opened}
                             onClick={toggle}
                             hiddenFrom="lg"
                             size="lg"
@@ -74,6 +72,7 @@ function Homepage() {
                         alignItems: "flex-end",
                         marginLeft: "auto",
                         paddingTop: "20px",
+                        zIndex: 2,
                         }}
                     >
                         <Burger
@@ -85,16 +84,17 @@ function Homepage() {
                         />
                     </div>
                     <Space h="sm" visibleFrom="lg"/>
-                    <Image src={nameLogo} style={{maxWidth: '50%', transform:'translate(0%, 0%)'}}/>
+                    <Image src={images.nametitle} style={{maxWidth: '70%', transform:'translate(8%, 0%)'}} visibleFrom="lg"/>
                     <Space h="sm" />
-                    <Title className="nameTitle" style={{fontSize: "3.5rem"}}> Sebastian Cruz</Title>
-                    <Space h="sm" />
-
-                    <NavLinkItem to="about-me" label="About" />
-                    <NavLinkItem to="resume.pdf" label="Resume/CV" />
-                    <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>
-                    <NavLinkItem to="https://github.com/seevass" label="GitHub" isExternal />
-                    <NavLinkItem to="mailto:cruzseabass@gmail.com" label="Contact" />
+                    <div style={{transform: navbarMobile}}>
+                        <Title className="nameTitle non-selectable" style={{fontSize: "3.5rem"}}> Sebastian Cruz</Title>
+                        <Space h="sm" />
+                        <NavLinkItem to="about-me" label="About" />
+                        <NavLinkItem to="resume.pdf" label="Resume/CV" />
+                        <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>
+                        <NavLinkItem to="https://github.com/seevass" label="GitHub" isExternal />
+                        <NavLinkItem to="mailto:cruzseabass@gmail.com" label="Contact" />
+                    </div>
                 </AppShell.Navbar>
 
                 <AppShell.Main className='main'>
@@ -103,13 +103,13 @@ function Homepage() {
 
                     <AppShell.Aside
                     visibleFrom="lg" className="aside">
-                        <Image src={tattooGif} w="300" 
+                        <Image src={images.tattoovertical} w="300" 
                         style={{maxWidth: '100%', maxHeight: '100%', transform: '', paddingRight:'20px'}} />
                     </AppShell.Aside>
 
                     <AppShell.Footer
                     hiddenFrom="lg" className="footer"> 
-                        <Image src={tattooGifSideways} h={300} w="auto"
+                        <Image src={images.tattoohorizontal} h={300} w="auto"
                         style={{maxWidth: '100%', maxHeight: '100%', transform: ''}} />
                     </AppShell.Footer>
             </AppShell>

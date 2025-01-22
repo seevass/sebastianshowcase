@@ -31,3 +31,11 @@
     --burger-line-size: 5px;
     --burger-color: var(--main-text-color)
   }
+
+  .non-selectable {
+    user-select: none; /* Disables text selection */
+    -webkit-user-select: none; /* For WebKit-based browsers */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
+  }
+  
