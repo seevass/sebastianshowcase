@@ -11,6 +11,9 @@ import nishikigoi from '../assets/tempdefault.png'
 import graphicdesign from '../assets/tempdefault.png'
 import keyboards from '../assets/tempdefault.png'
 import nametitle from '../assets/streamText.gif'
+import about1 from '../assets/DSCF0789.jpg'
+import about2 from '../assets/DSCF1339.jpg'
+import about3 from '../assets/DSCF1474.jpg'
 
 export const images = {
     tattoovertical: tattoovertical,
@@ -26,5 +29,8 @@ export const images = {
     graphicdesign: graphicdesign,
     keyboards: keyboards,
     nametitle: nametitle,
+    about1: about1,
+    about2: about2,
+    about3: about3,
   };
   

@@ -1,0 +1,45 @@
+.homelink .mantine-NavLink-label {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.homelink .mantine-NavLink-label:hover {
+    color: var(--main-text-color);
+    transition: color 0.3s ease;
+}
+.homelink {
+    background-color: transparent !important;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.subpage .mantine-Appshell-root {
+    padding-left: 0px;
+}
+
+.foot {
+    background-color: transparent !important;
+}
+
+.subpage {
+    background-color: var(--main-bg-color);
+}
+
+.textdescription {
+    width: 70vw;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.mantine-Title-root {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.subpagetext {
+    color: var(--main-header-color);
+}
+
+.title {
+    padding-left: 40px;
+}

@@ -92,7 +92,7 @@ function Homepage() {
                         <Space h="sm" />
                         <Stack 
                             gap='xl'
-                            style={{height: '60vh', overflow: 'auto'}}>
+                            style={{height: '65vh', overflow: 'auto'}}>
                             <NavLinkItem to="aboutme" label="About" />
                             <NavLinkItem to="resume.pdf" label="Resume/CV" />
                             <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>

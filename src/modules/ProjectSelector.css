@@ -10,3 +10,7 @@
     font-weight: 700;
     color: var(--main-header-color)
 }
+
+.text {
+    color: var(--main-text-color)
+}

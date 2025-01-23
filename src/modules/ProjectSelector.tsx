@@ -63,10 +63,13 @@ function ProjectSelector() {
           />
         </div>
       </Group>
-      <div style={{ overflow: "hidden", height: "100vh" }}>
+      <div style={{ overflow: "hidden", height: "75vh" }}>
         <Image src={images.tvbackground} alt="tv background" fit="contain" style={{ paddingLeft: img_breakpoint_left, paddingRight: img_breakpoint_right, maxWidth: '100%', maxHeight: '100%', transform: 'translate(0%, 0%)' }} className="background"/>
         <Image src={imageSrc} alt="project preview" fit="contain" style={{ paddingLeft: img_breakpoint_left, paddingRight: img_breakpoint_right, maxWidth: '100%', maxHeight: '100%', transform: 'translate(0%, -100%)' }} className="background-image"/>
         <Image src={images.tvmask} alt="graphicOverlay" style={{paddingLeft: img_breakpoint_left, paddingRight: img_breakpoint_right, maxWidth: '100%', maxHeight: '100%', transform: 'translate(0%, -200%)'}} className="overlapping-image"/>
+      </div>
+      <div className='text'>
+        ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
       </div>
 
     </Stack>
