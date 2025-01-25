@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Figma() {
   return (
     <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
