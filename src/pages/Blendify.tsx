@@ -2,6 +2,8 @@ import "./Blendify.css";
 import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
 import {images} from '../helpers/images.ts'
 import "@mantine/core/styles.css";
+import Figma from '../modules/Figma.tsx'
+import BlendifyVideo from "../modules/BlendifyVideo.tsx";
 
 function Blendify() {
   return (
@@ -15,18 +17,22 @@ function Blendify() {
             Blendify
           </Title>
           <Text className='textdescription subpagetext'>
-            Blendify is a web app that aimed to expedite the process for DJs searching for compatible songs to add to their mix by recommending songs that match BPM and key based on an inputted song, bpm, key, genre, or artist. Within the team, I acted as the project manager and one of the front-end developers. I was also responsible for creating the wireframes and UI layouts.
+            Blendify is a web app that aimed to expedite the process for DJs searching for compatible songs to add to their mix by recommending songs that match BPM of a given song. Within the team, I acted as the project manager and one of the front-end developers. I was also responsible for creating the wireframes and UI layouts.
           </Text>
         </Group>
         <Space h="xl"/>
+        
         <Group
           justify="center"
-          gap={"xl"}
+          gap={'xl'}
         >
-        <Image src={images.about1} h={"auto"} w="30vw"/>
-        <Image src={images.about3} h={"auto"} w="30vw"/>
-        <Image src={images.about2} h={"auto"} w="30vw"/>
+          <Image src={images.blendifyposter} h={"auto"} w="50vw" className="blendifyposter"/>
+          <Image src={images.blendifypurple} h={"54vh"} w="auto"/>
+          <BlendifyVideo />
+          <Figma />
         </Group>
+          
+          
         <Space h="xl"/>
         <Space h="xl"/>
       </AppShellMain>

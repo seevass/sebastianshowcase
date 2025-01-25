@@ -14,6 +14,9 @@ import nametitle from '../assets/streamText.gif'
 import about1 from '../assets/DSCF0789.jpg'
 import about2 from '../assets/DSCF1339.jpg'
 import about3 from '../assets/DSCF1474.jpg'
+import blendifyposter from '../assets/Blendify-Poster-Board.png'
+import blendifyblack from '../assets/Blendify Logo.png'
+import blendifypurple from '../assets/Blendify Logo Purple.png'
 
 export const images = {
     tattoovertical: tattoovertical,
@@ -32,5 +35,8 @@ export const images = {
     about1: about1,
     about2: about2,
     about3: about3,
+    blendifyposter: blendifyposter,
+    blendifyblack: blendifyblack,
+    blendifypurple: blendifypurple,
   };
   
