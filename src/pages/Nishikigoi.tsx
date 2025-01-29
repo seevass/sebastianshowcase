@@ -29,6 +29,7 @@ function Nishikigoi() {
         <Image src={images.nishikigoilogo} h={"auto"} w="90vw"/>
         <Nishikigoi1Video/>
         <Nishikigoi2Video/>
+        <Image src={images.nishikigoibox} h={"auto"} w="90vw"/>
         </Group>
         <Space h="xl"/>
         <Space h="xl"/>
