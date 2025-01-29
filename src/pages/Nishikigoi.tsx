@@ -2,6 +2,8 @@ import "./Nishikigoi.css";
 import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
 import {images} from '../helpers/images.ts'
 import "@mantine/core/styles.css";
+import Nishikigoi1Video from "../modules/Nishikigoi1Video.tsx";
+import Nishikigoi2Video from "../modules/Nishikigoi2Video.tsx";
 
 
 function Nishikigoi() {
@@ -24,9 +26,10 @@ function Nishikigoi() {
           justify="center"
           gap={"xl"}
         >
-        <Image src={images.about1} h={"auto"} w="30vw"/>
-        <Image src={images.about3} h={"auto"} w="30vw"/>
-        <Image src={images.about2} h={"auto"} w="30vw"/>
+        <Image src={images.nishikigoilogo} h={"auto"} w="90vw"/>
+        <Nishikigoi1Video/>
+        <Nishikigoi2Video/>
+        <Image src={images.nishikigoibox} h={"auto"} w="90vw"/>
         </Group>
         <Space h="xl"/>
         <Space h="xl"/>
