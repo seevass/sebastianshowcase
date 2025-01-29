@@ -1,18 +1,18 @@
-import { Box } from '@mantine/core';
-import blendifyvideo from '../../public/videos/Blendify Live Demo.mp4'
+import { AspectRatio } from '@mantine/core';
 
-const BlendifyVideo = () => {
+function BlendifyVideo() {
   return (
-    <Box>
-      <video
-        src={blendifyvideo}
-        controls
-        style={{ width: '90vw' }}
-      >
-        Your browser does not support the video tag.
-      </video>
-    </Box>
+    <AspectRatio ratio={16 / 9}>
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/50UkaxmEZf0"
+        title="YouTube video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{width:'95vw'}}
+      />
+    </AspectRatio>
   );
-};
+}
 
 export default BlendifyVideo;
+

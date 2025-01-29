@@ -26,8 +26,18 @@ function Blendify() {
           justify="center"
           gap={'xl'}
         >
-          <Image src={images.blendifyposter} h={"auto"} w="50vw" className="blendifyposter"/>
-          <Image src={images.blendifypurple} h={"54vh"} w="auto"/>
+          <NavLink 
+            className="externallink"
+            component="a"
+            href="https://github.com/connorsavage/Blendify"
+            target="_blank"
+            rel="noopener noreferrer"
+            label="To Github repository"
+            style={{textAlign:'center'}}
+          />
+          <Image src={images.blendifyposter} h={"auto"} w="95vw" className="blendifyposter"/>
+          <Image src={images.blendifypurple} h={'auto'} w="40vw"/>
+          <Image src={images.blendifyblack} h={'auto'} w="40vw"/>
           <BlendifyVideo />
           <Figma />
         </Group>

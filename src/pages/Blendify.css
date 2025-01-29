@@ -47,3 +47,16 @@
 .blendifyposter {
     border: 0px solid var(--main-header-color);
 }
+
+.externallink .mantine-NavLink-label {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.externallink .mantine-NavLink-label:hover {
+    color: var(--main-text-color);
+    transition: color 0.3s ease;
+}
+.externallink {
+    background-color: transparent !important;
+}
