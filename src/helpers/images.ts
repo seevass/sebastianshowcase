@@ -32,7 +32,7 @@ import serrashirt from '../assets/GraphicDesign/JUNGLE GAME DESIGN ON SHIRTS v2.
 import symposiumfront from '../assets/GraphicDesign/LMU APAM T shirt Front.png'
 import symposiumback from '../assets/GraphicDesign/LMU APAM T shirt Back.png'
 import symposiumshirt from '../assets/GraphicDesign/LMU APAM T shirt Mockup.png'
-
+import nishikigoilogo from '../assets/Nishikigoi/nishikigoilogo.png'
 
 export const images = {
     tattoovertical: tattoovertical,
@@ -69,5 +69,6 @@ export const images = {
     symposiumfront : symposiumfront,
     symposiumback : symposiumback,
     symposiumshirt : symposiumshirt,
+    nishikigoilogo : nishikigoilogo,
   };
   
