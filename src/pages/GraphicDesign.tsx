@@ -24,9 +24,25 @@ function GraphicDesign() {
           justify="center"
           gap={"xl"}
         >
-        <Image src={images.about1} h={"auto"} w="30vw"/>
-        <Image src={images.about3} h={"auto"} w="30vw"/>
-        <Image src={images.about2} h={"auto"} w="30vw"/>
+        <Image src={images.flowerdesign} h={"auto"} w="95vw"/>
+
+        <Image src={images.nsushirt} h={"auto"} w="95vw"/>
+        <Image src={images.nsufront} h={"auto"} w="45vw"/>
+        <Image src={images.nsuback} h={"auto"} w="45vw"/>
+
+        <Image src={images.calpolyshirt} h={"auto"} w="95vw"/>
+        <Image src={images.calpolyhoodfront} h={"auto"} w="45vw"/>
+        <Image src={images.calpolyhoodback} h={"auto"} w="45vw"/>
+        <Image src={images.calpolyfront} h={"auto"} w="45vw"/>
+        <Image src={images.calpolyback} h={"auto"} w="45vw"/>
+
+        <Image src={images.serrashirt} h={"auto"} w="95vw"/>
+        <Image src={images.serrafront} h={"auto"} w="45vw"/>
+        <Image src={images.serraback} h={"auto"} w="45vw"/>
+
+        <Image src={images.symposiumshirt} h={"auto"} w="95vw"/>
+        <Image src={images.symposiumfront} h={"auto"} w="45vw"/>
+        <Image src={images.symposiumback} h={"auto"} w="45vw"/>
         </Group>
         <Space h="xl"/>
         <Space h="xl"/>
