@@ -5,7 +5,7 @@ import { getRandomHoverColor } from '../helpers/colorUtils';
 import { useMediaQuery } from '@mantine/hooks';
 import { theme } from '../theme'; 
 
-const BASE_PATH = '/sebastian-showcase'; // Global base path for GitHub Pages
+const BASE_PATH = '/sebastianshowcase'; // Global base path for GitHub Pages
 
 interface NavLinkItemProps {
   to: string;

@@ -12,7 +12,7 @@ interface ProjectListProps {
     setImageSrc: (imageSrc: string) => void;
     style?: React.CSSProperties;
 }
-const BASE_PATH = '/sebastian-showcase';
+const BASE_PATH = '/sebastianshowcase';
 
 const ProjectList: React.FC<ProjectListProps> = ({ title, links, setImageSrc, style }) => {
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
