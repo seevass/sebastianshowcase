@@ -54,7 +54,13 @@ function GraphicDesign() {
           className="homelink"
           href="#welcomehome"
           label="Home sweet home!"
-          style={{justifyContent: "flex-start"}}
+          styles={() => ({
+            root: {
+              display: 'inline-block',
+              width: 'auto',
+              whiteSpace: 'nowrap',
+            },
+          })}
         />
       </AppShellFooter>
     </AppShell>

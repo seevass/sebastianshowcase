@@ -2,6 +2,8 @@ import "./Keyboards.css";
 import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
 import {images} from '../helpers/images.ts'
 import "@mantine/core/styles.css";
+import Keyboard1Video from "../modules/Keyboard1Video.tsx";
+import Keyboard2Video from "../modules/Keyboard2Video.tsx";
 
 
 function Keyboards() {
@@ -24,9 +26,12 @@ function Keyboards() {
           justify="center"
           gap={"xl"}
         >
-        <Image src={images.about1} h={"auto"} w="30vw"/>
-        <Image src={images.about3} h={"auto"} w="30vw"/>
-        <Image src={images.about2} h={"auto"} w="30vw"/>
+        <Image src={images.keyboard1} h={"auto"} w="30vw"/>
+        <Image src={images.keyboard2} h={"auto"} w="30vw"/>
+        <Image src={images.keyboard3} h={"auto"} w="30vw"/>
+        <Keyboard1Video/>
+        <Keyboard2Video/>
+        
         </Group>
         <Space h="xl"/>
         <Space h="xl"/>
@@ -38,7 +43,13 @@ function Keyboards() {
           className="homelink"
           href="#welcomehome"
           label="Home sweet home!"
-          style={{justifyContent: "flex-start"}}
+          styles={() => ({
+            root: {
+              display: 'inline-block',
+              width: 'auto',
+              whiteSpace: 'nowrap',
+            },
+          })}
         />
       </AppShellFooter>
     </AppShell>

@@ -2,6 +2,7 @@ import "./Quickcast.css";
 import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
 import {images} from '../helpers/images.ts'
 import "@mantine/core/styles.css";
+import QuickcastVideo from "../modules/QuickcastVideo.tsx";
 
 
 function Quickcast() {
@@ -24,9 +25,25 @@ function Quickcast() {
           justify="center"
           gap={"xl"}
         >
-        <Image src={images.about1} h={"auto"} w="30vw"/>
-        <Image src={images.about3} h={"auto"} w="30vw"/>
-        <Image src={images.about2} h={"auto"} w="30vw"/>
+          <NavLink 
+            className="externallink"
+            component="a"
+            href="https://github.com/seevass/Quickcast"
+            target="_blank"
+            rel="noopener noreferrer"
+            label="To Github repository"
+            style={{textAlign:'center'}}
+          />
+          <QuickcastVideo/>
+          <NavLink 
+            className="externallink"
+            component="a"
+            href="/sebastianshowcase/Quickcast Technical Design Document.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            label="Technical Design Document"
+            style={{textAlign:'center'}}
+          />
         </Group>
         <Space h="xl"/>
         <Space h="xl"/>
@@ -38,7 +55,13 @@ function Quickcast() {
           className="homelink"
           href="#welcomehome"
           label="Home sweet home!"
-          style={{justifyContent: "flex-start"}}
+          styles={() => ({
+            root: {
+              display: 'inline-block',
+              width: 'auto',
+              whiteSpace: 'nowrap',
+            },
+          })}
         />
       </AppShellFooter>
     </AppShell>
