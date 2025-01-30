@@ -52,7 +52,7 @@ function ProjectSelector() {
             links={[
               ['photography', 'Photography', images.photography],
               ['nishikigoi', 'Nishikigoi', images.nishikigoi],
-              ['graphicdesign', 'Graphic Design', images.nishikigoi],
+              ['graphicdesign', 'Graphic Design', images.graphicdesign],
               ['keyboards', 'Keyboards', images.keyboards],
 
             ]}
