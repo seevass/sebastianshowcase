@@ -1,6 +1,5 @@
 import "./Quickcast.css";
-import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
-import {images} from '../helpers/images.ts'
+import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Space} from "@mantine/core";
 import "@mantine/core/styles.css";
 import QuickcastVideo from "../modules/QuickcastVideo.tsx";
 
