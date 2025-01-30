@@ -34,6 +34,10 @@ import symposiumback from '../assets/GraphicDesign/LMU APAM T shirt Back.png'
 import symposiumshirt from '../assets/GraphicDesign/LMU APAM T shirt Mockup.png'
 import nishikigoilogo from '../assets/Nishikigoi/nishikigoilogo.png'
 import nishikigoibox from '../assets/Nishikigoi/PICK THIS ONE.png'
+import keyboardwarriorposter from '../assets/KeyboardWarrior/KeyboardWarriorPoster.png'
+import keyboard1 from '../assets/Keyboards/DSCF0789.jpg'
+import keyboard2 from '../assets/Keyboards/DSCF1339.jpg'
+import keyboard3 from '../assets/Keyboards/DSCF1474.jpg'
 
 export const images = {
     tattoovertical: tattoovertical,
@@ -72,5 +76,9 @@ export const images = {
     symposiumshirt : symposiumshirt,
     nishikigoilogo : nishikigoilogo,
     nishikigoibox : nishikigoibox,
+    keyboardwarriorposter : keyboardwarriorposter,
+    keyboard1 : keyboard1, 
+    keyboard2 : keyboard2, 
+    keyboard3 : keyboard3, 
   };
   

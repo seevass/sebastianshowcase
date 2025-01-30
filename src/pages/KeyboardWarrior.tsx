@@ -24,9 +24,7 @@ function KeyboardWarrior() {
           justify="center"
           gap={"xl"}
         >
-        <Image src={images.about1} h={"auto"} w="30vw"/>
-        <Image src={images.about3} h={"auto"} w="30vw"/>
-        <Image src={images.about2} h={"auto"} w="30vw"/>
+        <Image src={images.keyboardwarriorposter} h={"auto"} w="95vw"/>
         </Group>
         <Space h="xl"/>
         <Space h="xl"/>
