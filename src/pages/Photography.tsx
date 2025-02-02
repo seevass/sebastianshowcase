@@ -2,6 +2,7 @@ import "./Photography.css";
 import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
 import {images} from '../helpers/images.ts'
 import "@mantine/core/styles.css";
+import PhotographyImageLoader from "../modules/PhotographyImageLoader.tsx";
 
 
 function Photography() {
@@ -24,10 +25,9 @@ function Photography() {
           justify="center"
           gap={"xl"}
         >
-        <Image src={images.about1} h={"auto"} w="30vw"/>
-        <Image src={images.about3} h={"auto"} w="30vw"/>
-        <Image src={images.about2} h={"auto"} w="30vw"/>
+
         </Group>
+        <PhotographyImageLoader/>
         <Space h="xl"/>
         <Space h="xl"/>
       </AppShellMain>
