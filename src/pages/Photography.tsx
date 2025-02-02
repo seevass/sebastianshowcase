@@ -1,6 +1,5 @@
 import "./Photography.css";
-import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
-import {images} from '../helpers/images.ts'
+import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Space} from "@mantine/core";
 import "@mantine/core/styles.css";
 import PhotographyImageLoader from "../modules/PhotographyImageLoader.tsx";
 
