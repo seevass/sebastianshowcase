@@ -59,4 +59,5 @@
 }
 .externallink {
     background-color: transparent !important;
+    color: var(--main-header-color);
 }
