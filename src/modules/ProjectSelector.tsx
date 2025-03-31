@@ -12,12 +12,11 @@ function ProjectSelector() {
   const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
   const text_breakpoint_right = isMobile ? '0px' : '12%';
   const text_breakpoint_left = isMobile ? '10px' : '0px';
-  const img_breakpoint_right = isMobile ? '0px' : '0px';
-  const img_breakpoint_left = isMobile ? '0px' : '0px';
+  // const img_breakpoint_right = isMobile ? '0px' : '0px';
+  // const img_breakpoint_left = isMobile ? '0px' : '0px';
   const breakpoint_top = isMobile? '50px' : '50px';
   const navlink_title_breakpoint = isMobile ? 'clamp(2rem, 7vw, 5rem)' : 'clamp(3rem, 3vw, 5rem)';
 
-  const tv_breakpoint_height = isMobile ? '70vh' : '50vh';
   const tv_breakpoint_width = isMobile ? '90vw' : '45vw';
   const tv_transform = isMobile? 'translate(0%, 0%)' : 'translate(0%, 2%)'
 
