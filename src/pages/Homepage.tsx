@@ -49,7 +49,12 @@ function Homepage() {
             <AppShell layout='alt'>
                 <AppShell.Header className="header">
                     <Group style={{ padding: "20px" }}>
-                        <Image src={images.nametitle} h={27} w="auto" hiddenFrom="lg" style={{transform:'translate(10%, 0%)'}}/>
+                        <Image 
+                            src={images.nametitle} 
+                            h={27} 
+                            w="auto" 
+                            hiddenFrom="lg" 
+                            style={{transform:'translate(10%, 0%)'}}/>
                         <div
                             style={{
                             alignItems: "flex-end",
@@ -58,10 +63,10 @@ function Homepage() {
                             }}
                         >
                             <Burger
-                            onClick={toggle}
-                            hiddenFrom="lg"
-                            size="lg"
-                            style={{ padding: "10px",}}
+                                onClick={toggle}
+                                hiddenFrom="lg"
+                                size="lg"
+                                style={{ padding: "10px",}}
                             />
                         </div>
                     </Group>
@@ -71,7 +76,6 @@ function Homepage() {
                     <div
                         style={{
                         alignItems: "flex-end",
-                        marginLeft: "auto",
                         paddingTop: "20px",
                         zIndex: 2,
                         }}
@@ -91,8 +95,8 @@ function Homepage() {
                         <Title className="nameTitle non-selectable" style={{fontSize: "3.5rem"}}> Sebastian Cruz</Title>
                         <Space h="sm" />
                         <Stack 
-                            gap='xl'
-                            style={{height: '65vh', overflow: 'auto'}}>
+                            gap='7vh'
+                            style={{height: '80vh', overflow: 'auto'}}>
                             <NavLinkItem to="aboutme" label="About" />
                             <NavLinkItem to="resume.pdf" label="Resume/CV" />
                             <NavLinkItem to="https://www.linkedin.com/in/cruzseabass/" label="LinkedIn" isExternal/>
@@ -108,8 +112,8 @@ function Homepage() {
 
                     <AppShell.Aside
                     visibleFrom="lg" className="aside">
-                        <Image src={images.tattoovertical} w="300" 
-                        style={{maxWidth: '100%', maxHeight: '100%', transform: '', paddingRight:'20px'}} />
+                        <Image src={images.tattoovertical} w="18vw" 
+                        style={{maxWidth: '100%', maxHeight: '100%', transform: '', paddingRight:'3vw'}} />
                     </AppShell.Aside>
 
                     <AppShell.Footer

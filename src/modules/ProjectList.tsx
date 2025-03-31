@@ -16,12 +16,11 @@ const BASE_PATH = '/sebastianshowcase';
 
 const ProjectList: React.FC<ProjectListProps> = ({ title, links, setImageSrc, style }) => {
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
-    const navlink_button_breakpoint = isMobile ? '2rem' : '2.19rem';
-    const link_width_breakpoint = isMobile ? '300px' : 'auto';
+    const navlink_button_breakpoint = isMobile ? 'clamp(2rem, 4vw, 4rem)' : 'clamp(3.1rem, 1vw, 5rem)';
+    const link_width_breakpoint = isMobile ? 'auto' : 'auto';
 
     const adjustedHref = (href: string) => `${BASE_PATH}#${href}`;
 
-    // ✅ Preload images on component mount
     useEffect(() => {
         links.forEach(([_, __, image]) => {
             const img = new Image();
