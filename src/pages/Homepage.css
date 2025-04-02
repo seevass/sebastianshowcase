@@ -29,7 +29,7 @@
   }
 
   .mantine-Burger-root {
-    --burger-line-size: 5px;
+    --burger-line-size: 10px;
     --burger-color: var(--main-text-color)
   }
 

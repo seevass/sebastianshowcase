@@ -7,6 +7,9 @@ import { theme } from '../theme';
 
 const BASE_PATH = '/sebastianshowcase'; // Global base path for GitHub Pages
 
+
+
+
 interface NavLinkItemProps {
   to: string;
   label: string;
@@ -36,7 +39,8 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
     : `${BASE_PATH}#${to}`; // For regular routes with hash
 
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
-    const navbar_font_size = isMobile ? '2.5rem' : '3rem';
+    const navbar_font_size = isMobile ? '5rem' : '3rem';
+    const link_width_breakpoint = isMobile ? '40vw' : 'auto';
   return (
     <NavLink
       className="navLink"
@@ -45,12 +49,18 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
       href={adjustedHref}
       target={isExternal ? '_blank' : undefined} // Opens in a new tab if external
       rel={isExternal ? 'noopener noreferrer' : undefined} // Security for external links
-      style={{ color: hoverColor || 'var(--main-text-color)'}}
+      style={{ 
+        color: hoverColor ?? 'var(--main-text-color)',
+        
+      }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       styles={{
         label: {
           fontSize: navbar_font_size,
+        },
+        root: { 
+          width: link_width_breakpoint 
         },
       }}
     />

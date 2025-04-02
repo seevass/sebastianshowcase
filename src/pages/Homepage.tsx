@@ -7,6 +7,7 @@ import {
     Title,
     Space,
     Stack,
+    Flex,
 } from "@mantine/core";
 
 import { useDisclosure, useMediaQuery} from "@mantine/hooks";
@@ -23,6 +24,9 @@ function Homepage() {
     const [opened, { toggle }] = useDisclosure(false);
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
     const navbarMobile = isMobile ? "translate(0%, -5%)" : "translate(0%,0%)";
+    const navbarPadding = isMobile ? "40px" : "20px";
+    const navbarNameSize = isMobile ? "6rem" : "3.5rem";
+    const navbarItemSpacing = isMobile ? "2vh" : "7vh";
 
     const navbarThemeOverride = {
         components: {
@@ -51,10 +55,10 @@ function Homepage() {
                     <Group style={{ padding: "20px" }}>
                         <Image 
                             src={images.nametitle} 
-                            h={27} 
+                            h={50} 
                             w="auto" 
                             hiddenFrom="lg" 
-                            style={{transform:'translate(10%, 0%)'}}/>
+                            style={{transform:'translate(20%, 0%)'}}/>
                         <div
                             style={{
                             alignItems: "flex-end",
@@ -65,37 +69,45 @@ function Homepage() {
                             <Burger
                                 onClick={toggle}
                                 hiddenFrom="lg"
-                                size="lg"
+                                size="80px"
                                 style={{ padding: "10px",}}
                             />
                         </div>
                     </Group>
                 </AppShell.Header>
 
-                <AppShell.Navbar className="navBar" style={{ paddingLeft: "20px"}}>
-                    <div
+                <AppShell.Navbar className="navBar" style={{ paddingLeft: navbarPadding}}>
+                    <Flex 
+                        justify='flex-end' 
                         style={{
-                        alignItems: "flex-end",
-                        paddingTop: "20px",
-                        zIndex: 2,
-                        }}
-                    >
-                        <Burger
-                        opened={opened}
-                        onClick={toggle}
-                        hiddenFrom="lg"
-                        size="xl"
-                        style={{paddingRight: "67px"}}
-                        />
-                    </div>
+                            paddingRight: "30px"
+                        }}>
+                        <div
+                            style={{
+                                alignItems: "flex-end",
+                                paddingTop: "20px",
+                                zIndex: 2,
+                            }}
+                        >
+                            <Burger
+                            opened={opened}
+                            onClick={toggle}
+                            hiddenFrom="lg"
+                            size="80px"
+                            style={{
+                                paddingRight: "0px"
+                            }}
+                            />
+                        </div>
+                    </Flex>
                     <Space h="sm" visibleFrom="lg"/>
                     <Image src={images.nametitle} style={{maxWidth: '70%', transform:'translate(8%, 0%)'}} visibleFrom="lg"/>
                     <Space h="sm" />
                     <div style={{transform: navbarMobile}}>
-                        <Title className="nameTitle non-selectable" style={{fontSize: "3.5rem"}}> Sebastian Cruz</Title>
+                        <Title className="nameTitle non-selectable" style={{fontSize: navbarNameSize}}> Sebastian Cruz</Title>
                         <Space h="sm" />
                         <Stack 
-                            gap='7vh'
+                            gap={navbarItemSpacing}
                             style={{height: '80vh', overflow: 'auto'}}>
                             <NavLinkItem to="aboutme" label="About" />
                             <NavLinkItem to="resume.pdf" label="Resume/CV" />
