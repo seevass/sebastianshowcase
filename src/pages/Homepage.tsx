@@ -125,13 +125,23 @@ function Homepage() {
                     <AppShell.Aside
                     visibleFrom="lg" className="aside">
                         <Image src={images.tattoovertical} w="18vw" 
-                        style={{maxWidth: '100%', maxHeight: '100%', transform: '', paddingRight:'3vw'}} />
+                        style={{maxWidth: '100%', maxHeight: '100%', paddingRight:'3vw'}} />
                     </AppShell.Aside>
 
                     <AppShell.Footer
-                    hiddenFrom="lg" className="footer"> 
-                        <Image src={images.tattoohorizontal} h={300} w="auto"
-                        style={{maxWidth: '100%', maxHeight: '100%', transform: ''}} />
+                        hiddenFrom="lg"
+                        className="footer"
+                        style={{
+                            width: '100%',
+                            pointerEvents: 'none',
+                        }}
+                    > 
+                        <Image
+                            src={images.tattoohorizontal}
+                            h={300}
+                            w="auto"
+                            style={{ maxWidth: '100%', maxHeight: '100%' }}
+                        />
                     </AppShell.Footer>
             </AppShell>
         </MantineProvider>

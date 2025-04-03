@@ -17,7 +17,7 @@ function SussyScript() {
             SussyScript
           </Title>
           <Text className='textdescription subpagetext'>
-            SussyScript is a web app that aimed to expedite the process for DJs searching for compatible songs to add to their mix by recommending songs that match BPM of a given song. Within the team, I acted as the project manager and one of the front-end developers. I was also responsible for creating the wireframes and UI layouts.
+            SussyScript is a static and weakly typed coding language inspired by the popular party game Among Us! SussyScript takes influence from the coding conventions of JavaScript and Python, aimed to introduce coding to crewmates (and also beginner coders familiar with Among Us). Being a language targeted for beginners, SussyScript allows users to learn the basic functions of coding, such as looping and expression creation, with terms and keywords that allude to mechanics in Among Us!
           </Text>
         </Group>
         <Space h="xl"/>
@@ -29,7 +29,7 @@ function SussyScript() {
           <NavLink 
             className="externallink"
             component="a"
-            href="https://github.com/connorsavage/Blendify"
+            href="https://github.com/connorsavage/SussyScript"
             target="_blank"
             rel="noopener noreferrer"
             label="To Github repository"
