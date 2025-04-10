@@ -2,36 +2,38 @@ import React, { useEffect } from 'react';
 import './ProjectList.css';
 import { Text, NavLink } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { theme } from '../theme'; 
+import { theme } from '../theme';
 
-type ProjectListTuple = [href: string, label: string, image: string];
+type ProjectListTuple = [href: string, label: string, video: string];
 
 interface ProjectListProps {
     title?: string | undefined;
     links: ProjectListTuple[];
-    setImageSrc: (imageSrc: string) => void;
+    setVideoSrc: (videoSrc: string) => void;
     style?: React.CSSProperties;
 }
+
 const BASE_PATH = '/sebastianshowcase';
 
-const ProjectList: React.FC<ProjectListProps> = ({ title, links, setImageSrc, style }) => {
+const ProjectList: React.FC<ProjectListProps> = ({ title, links, setVideoSrc, style }) => {
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
     const navlink_button_breakpoint = isMobile ? 'clamp(2rem, 4vw, 4rem)' : 'clamp(3.1rem, 1vw, 5rem)';
     const link_width_breakpoint = isMobile ? 'auto' : 'auto';
 
     const adjustedHref = (href: string) => `${BASE_PATH}#${href}`;
 
+    // Preload videos on mount (optional but helpful if you're using autoplay/hover)
     useEffect(() => {
-        links.forEach(([_, __, image]) => {
-            const img = new Image();
-            img.src = image;
+        links.forEach(([_, __, video]) => {
+            const videoEl = document.createElement('video');
+            videoEl.src = video;
         });
     }, [links]);
 
     return (
         <div style={{ ...style }}>
             <Text className='projectLinkTitle'>{title}</Text>
-            {links.map(([href, label, image]) => (
+            {links.map(([href, label, video]) => (
                 <NavLink
                     key={href}
                     className="projectLink"
@@ -41,7 +43,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ title, links, setImageSrc, st
                     })}
                     href={adjustedHref(href)}
                     label={label}
-                    onMouseEnter={() => setImageSrc(image)}
+                    onMouseEnter={() => setVideoSrc(video)}
                 />
             ))}
         </div>

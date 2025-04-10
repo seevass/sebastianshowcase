@@ -3,12 +3,14 @@ import './ProjectSelector.css';
 import { Stack, Image, Group, Text} from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import ProjectList from './ProjectList';
+import {videos} from '../helpers/videos.ts'
 import {images} from '../helpers/images.ts'
 
 import { theme } from '../theme'; 
 
 function ProjectSelector() {
-  const [imageSrc, setImageSrc] = useState(images.tvdefault);
+  const [videoSrc, setVideoSrc] = useState(videos.loadingvideo);
+  
   const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
   const text_breakpoint_right = isMobile ? '0px' : '12%';
   const text_breakpoint_left = isMobile ? '50px' : '0px';
@@ -17,9 +19,10 @@ function ProjectSelector() {
 
   const tv_breakpoint_width = isMobile ? '85vw' : '45vw';
   const tv_transform = isMobile? 'translate(0%, 0%)' : 'translate(0%, 2%)'
+  const tv_video_transform = isMobile? 'translate(5%, -24%)' : 'translate(4.8%, -22%)'
 
-  const handleImageChange = (newImageSrc: string) => {
-    setImageSrc(newImageSrc);
+  const handleVideoChange = (newVideoSrc: string) => {
+    setVideoSrc(newVideoSrc);
   };
 
   return (
@@ -37,12 +40,12 @@ function ProjectSelector() {
           </Text>
           <ProjectList
             links={[
-              ['keyboardwarrior', 'Keyboard Warrior', images.keyboardwarrior],
-              ['quickcast', 'Quickcast', images.quickcast],
-              ['blendify', 'Blendify', images.blendify],
-              ['sussyscript', 'SussyScript', images.blendify],
+              ['keyboardwarrior', 'Keyboard Warrior', videos.keyboardwarriorvideo],
+              ['quickcast', 'Quickcast', videos.quickcastvideo],
+              ['blendify', 'Blendify', videos.blendifyvideo],
+              ['sussyscript', 'SussyScript', videos.sussyscriptvideo],
             ]}
-            setImageSrc={handleImageChange} // Pass the function to handle image change
+            setVideoSrc={handleVideoChange} // Pass the function to handle image change
             style={{
               columnCount: isMobile ? 1 : 2,
             }}
@@ -54,13 +57,13 @@ function ProjectSelector() {
           </Text>
           <ProjectList
             links={[
-              ['photography', 'Photography', images.photography],
-              ['nishikigoi', 'Nishikigoi', images.nishikigoi],
-              ['graphicdesign', 'Graphic Design', images.graphicdesign],
-              ['keyboards', 'Keyboards', images.keyboards],
+              ['photography', 'Photography', videos.photographyvideo],
+              ['nishikigoi', 'Nishikigoi', videos.nishikigoivideo],
+              ['graphicdesign', 'Graphic Design', videos.graphicdesignvideo],
+              ['keyboards', 'Keyboards', videos.keyboardvideo],
 
             ]}
-            setImageSrc={handleImageChange} // Pass the function to handle image change
+            setVideoSrc={handleVideoChange} // Pass the function to handle image change
             style={{
               columnCount: isMobile ? 1 : 2,
             }}
@@ -85,17 +88,33 @@ function ProjectSelector() {
             maxHeight: '100%', 
             transform: 'translate(0%, 0%)' }} 
             className="background"/>
-        <Image 
-          src={imageSrc} 
-          alt="project preview" 
-          fit="contain" 
-          style={{ 
-            //paddingLeft: img_breakpoint_left, 
-            //paddingRight: img_breakpoint_right, 
-            maxWidth: '100%', 
-            maxHeight: '100%', 
-            transform: 'translate(0%, -100%)' }} 
-            className="background-image"/>
+        <div
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            maxWidth: '80%',
+            maxHeight: '100%',
+            overflow: 'hidden',
+          }}
+        >
+          <video
+            src={videoSrc}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain', // Maintain aspect ratio of the video
+              transform: tv_video_transform,
+            }}
+            className="background-image"
+          />
+        </div>
         <Image 
           src={images.tvmask} 
           alt="graphicOverlay" 
@@ -104,7 +123,7 @@ function ProjectSelector() {
             //paddingRight: img_breakpoint_right, 
             maxWidth: '100%', 
             maxHeight: '100%', 
-            transform: 'translate(0%, -200%)'}} 
+            transform: 'translate(0%, -100%)'}} 
             className="overlapping-image"/>
       </div>
       <div className='text'>
