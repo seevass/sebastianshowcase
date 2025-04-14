@@ -9,11 +9,11 @@
     --green-color: #7ea151;
   }
   
-  .main, .header, .navBar, .aside{
+  .main, .header, .navBar{
     background-color: var(--main-bg-color) !important;
   }
   
-  .footer {
+  .footer, .aside {
     background-color: var(--transparent-color) !important;
   }
   

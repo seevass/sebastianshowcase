@@ -25,8 +25,9 @@ function Homepage() {
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
     const navbarMobile = isMobile ? "translate(0%, -5%)" : "translate(0%,0%)";
     const navbarPadding = isMobile ? "40px" : "20px";
-    const navbarNameSize = isMobile ? "6rem" : "3.5rem";
-    const navbarItemSpacing = isMobile ? "2vh" : "7vh";
+    const navbarNameSize = isMobile ? "5rem" : "3.5rem";
+    const navbarItemSpacing = isMobile ? "2vh" : "6vh";
+    const asideWidth = '20vw';
 
     const navbarThemeOverride = {
         components: {
@@ -69,7 +70,7 @@ function Homepage() {
                             <Burger
                                 onClick={toggle}
                                 hiddenFrom="lg"
-                                size="80px"
+                                size="70px"
                                 style={{ padding: "10px",}}
                             />
                         </div>
@@ -93,7 +94,7 @@ function Homepage() {
                             opened={opened}
                             onClick={toggle}
                             hiddenFrom="lg"
-                            size="80px"
+                            size="70px"
                             style={{
                                 paddingRight: "0px"
                             }}
@@ -118,14 +119,22 @@ function Homepage() {
                     </div>
                 </AppShell.Navbar>
 
-                <AppShell.Main className='main'>
+                <AppShell.Main
+                    className='main'
+                    style={{
+                    }}
+                >
                     <ProjectSelector />
                 </AppShell.Main>
 
                     <AppShell.Aside
-                    visibleFrom="lg" className="aside">
-                        <Image src={images.tattoovertical} w="18vw" 
-                        style={{maxWidth: '100%', maxHeight: '100%', paddingRight:'3vw'}} />
+                    visibleFrom="lg" className="aside"
+                    style={{
+                            pointerEvents: 'none',
+                        }}
+                    >
+                        <Image src={images.tattoovertical} w={asideWidth}
+                        style={{maxWidth: '100%', maxHeight: '100%', paddingRight:'1.5vw'}} />
                     </AppShell.Aside>
 
                     <AppShell.Footer

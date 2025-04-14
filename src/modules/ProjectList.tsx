@@ -17,8 +17,18 @@ const BASE_PATH = '/sebastianshowcase';
 
 const ProjectList: React.FC<ProjectListProps> = ({ title, links, setVideoSrc, style }) => {
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
-    const navlink_button_breakpoint = isMobile ? 'clamp(2rem, 4vw, 4rem)' : 'clamp(3.1rem, 1vw, 5rem)';
+    const is1080p = useMediaQuery(`(min-width: ${theme?.breakpoints?.lg}) and (max-width: 1920px)`);
+    const is2k = useMediaQuery('(min-width: 1921px)');
+
     const link_width_breakpoint = isMobile ? 'auto' : 'auto';
+
+   const navlink_button_breakpoint = isMobile
+        ? 'clamp(2rem, 4vw, 4rem)'               // mobile
+        : is2k
+            ? 'clamp(2.5rem, 3vw, 3.2rem)'              // 2K
+            : is1080p
+                ? 'clamp(1rem, 2vw, 2.3rem)'     // 1080p
+                : 'clamp(1rem, 2vw, 2rem)';          // mid-size fallback
 
     const adjustedHref = (href: string) => `${BASE_PATH}#${href}`;
 
