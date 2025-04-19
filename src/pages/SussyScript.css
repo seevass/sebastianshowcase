@@ -61,3 +61,18 @@
     background-color: transparent !important;
     color: var(--main-header-color);
 }
+
+.markdown-body {
+    background-color: transparent !important;
+    color: var(--main-header-color) !important;
+}
+
+.markdown-body code {
+  color: var(--main-bg-color); /* Inline code text color */
+}
+
+.markdown-body th, .markdown-body td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: var(--main-text-color); /* Table text color */
+}

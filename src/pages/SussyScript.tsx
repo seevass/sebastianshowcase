@@ -1,9 +1,13 @@
 import "./SussyScript.css";
-import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Image, Space} from "@mantine/core";
-import {images} from '../helpers/images.ts'
+import { AppShell, AppShellFooter,  AppShellMain,  NavLink, Title, Group, Text, Space} from "@mantine/core";
 import "@mantine/core/styles.css";
-import Figma from '../modules/Figma.tsx'
-import BlendifyVideo from "../modules/BlendifyVideo.tsx";
+
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import sussyScriptMarkdown from '../assets/SussyScript/SussyScript.md?raw';
+
+import 'github-markdown-css/github-markdown.css';
+
 
 function SussyScript() {
   return (
@@ -35,11 +39,11 @@ function SussyScript() {
             label="To Github repository"
             style={{textAlign:'center'}}
           />
-          <Image src={images.blendifyposter} h={"auto"} w="95vw" className="Blendifyposter"/>
-          <Image src={images.blendifypurple} h={'auto'} w="40vw"/>
-          <Image src={images.blendifyblack} h={'auto'} w="40vw"/>
-          <BlendifyVideo />
-          <Figma />
+          <div className="markdown-body">
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+              {sussyScriptMarkdown}
+            </ReactMarkdown>
+          </div>
         </Group>
           
           
