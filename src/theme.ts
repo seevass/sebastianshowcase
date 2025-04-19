@@ -7,7 +7,6 @@ export const theme = createTheme({
         padding: "xl",
         header: { height: 0 },
         navbar: {
-          width: 350,
         },
         withBorder: false,
       },

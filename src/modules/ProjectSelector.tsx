@@ -13,14 +13,14 @@ function ProjectSelector() {
   
   const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
   const text_breakpoint_right = isMobile ? '0px' : '12%';
-  const text_breakpoint_left = isMobile ? '50px' : '0px';
+  const text_breakpoint_left = isMobile ? '10px' : '20px';
   const breakpoint_top = isMobile? '70px' : '50px';
-  const navlink_title_breakpoint = isMobile ? 'clamp(2rem, 7vw, 5rem)' : 'clamp(3rem, 3vw, 5rem)';
+  const navlink_title_breakpoint = isMobile ? 'clamp(3rem, 7vw, 5rem)' : 'clamp(3rem, 3vw, 5rem)';
 
-  const tv_breakpoint_width = isMobile ? '85vw' : '50vw';
-  const tv_background_transform = isMobile? 'translate(0%, -32%)' : 'translate(0%, -30%)'
-  const tv_mask_transform = isMobile? 'translate(0%, -31%)' : 'translate(0%, -30%)'
-  const tv_video_transform = isMobile? 'translate(-7%, -44%)' : 'translate(-6%, -44%)'
+  const tv_breakpoint_width = isMobile ? '85vw' : '40vw';
+  const tv_background_transform = isMobile? 'translate(0%, -32%)' : 'translate(-3%, -32%)'
+  const tv_mask_transform = isMobile? 'translate(0%, -31%)' : 'translate(-3%, -32%)'
+  const tv_video_transform = isMobile? 'translate(-7%, -44%)' : 'translate(-11%, -46.5%)'
 
   const handleVideoChange = (newVideoSrc: string) => {
     setVideoSrc(newVideoSrc);
@@ -48,7 +48,7 @@ function ProjectSelector() {
             ]}
             setVideoSrc={handleVideoChange} // Pass the function to handle image change
             style={{
-              columnCount: isMobile ? 1 : 2,
+              columnCount: isMobile ? 1 : 1,
             }}
           />
         </div>
@@ -66,7 +66,7 @@ function ProjectSelector() {
             ]}
             setVideoSrc={handleVideoChange} // Pass the function to handle image change
             style={{
-              columnCount: isMobile ? 1 : 2,
+              columnCount: isMobile ? 1 : 1,
             }}
           />
         </div>

@@ -23,17 +23,18 @@ import ProjectSelector from "../modules/ProjectSelector";
 function Homepage() {
     const [opened, { toggle }] = useDisclosure(false);
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
-    const navbarMobile = isMobile ? "translate(0%, -5%)" : "translate(0%,0%)";
-    const navbarPadding = isMobile ? "40px" : "20px";
-    const navbarNameSize = isMobile ? "5rem" : "3.5rem";
-    const navbarItemSpacing = isMobile ? "2vh" : "6vh";
-    const asideWidth = '20vw';
+    const navbarMobile = isMobile ? "translate(0%, -2%)" : "translate(0%,0%)";
+    const navbarPadding = isMobile ? "40px" : "40px";
+    const navbarNameSize = isMobile ? "clamp(3rem, 8vw, 5rem)" : "clamp(3rem, 3vw, 5rem)";
+    const navbarItemSpacing = isMobile ? "2vh" : "3vh";
+    const asideWidth = '25vw';
 
     const navbarThemeOverride = {
         components: {
             AppShell: {
                 defaultProps: {
                   navbar: {
+                    width: '22vw',
                     breakpoint: "lg",
                     collapsed: {
                       mobile: !opened,
@@ -56,10 +57,10 @@ function Homepage() {
                     <Group style={{ padding: "20px" }}>
                         <Image 
                             src={images.nametitle} 
-                            h={50} 
+                            h={'clamp(2.5rem, 5vw, 5rem)'} 
                             w="auto" 
                             hiddenFrom="lg" 
-                            style={{transform:'translate(20%, 0%)'}}/>
+                            style={{transform:'translate(1rem, 0%)'}}/>
                         <div
                             style={{
                             alignItems: "flex-end",
@@ -102,11 +103,11 @@ function Homepage() {
                         </div>
                     </Flex>
                     <Space h="sm" visibleFrom="lg"/>
-                    <Image src={images.nametitle} style={{maxWidth: '70%', transform:'translate(8%, 0%)'}} visibleFrom="lg"/>
-                    <Space h="sm" />
+                    <Image src={images.nametitle} style={{maxWidth: '70%', transform:'translate(3%, 20%)'}} visibleFrom="lg"/>
+                    <Space h="2vh" visibleFrom="lg"/>
                     <div style={{transform: navbarMobile}}>
                         <Title className="nameTitle non-selectable" style={{fontSize: navbarNameSize}}> Sebastian Cruz</Title>
-                        <Space h="sm" />
+                        <Space h="2vh" />
                         <Stack 
                             gap={navbarItemSpacing}
                             style={{height: '80vh', overflow: 'auto'}}>
@@ -134,7 +135,7 @@ function Homepage() {
                         }}
                     >
                         <Image src={images.tattoovertical} w={asideWidth}
-                        style={{maxWidth: '100%', maxHeight: '100%', paddingRight:'1.5vw'}} />
+                        style={{maxWidth: '100%', maxHeight: '100%', paddingRight:'5vw'}} />
                     </AppShell.Aside>
 
                     <AppShell.Footer

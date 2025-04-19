@@ -39,7 +39,7 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ to, label, isExternal = false
     : `${BASE_PATH}#${to}`; // For regular routes with hash
 
     const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
-    const navbar_font_size = isMobile ? '4rem' : '3rem';
+    const navbar_font_size = isMobile ? 'clamp(2rem, 8vw, 5rem)' : 'clamp(2.5vw, 2vw, 4vw)';
     const link_width_breakpoint = isMobile ? '40vw' : 'auto';
   return (
     <NavLink
