@@ -1,23 +1,19 @@
 import { useState } from "react";
 import "./ProjectSelector.css";
-import { Stack, Image, Group, Text } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import { Stack, Image, Group, Title } from "@mantine/core";
 import ProjectList from "./ProjectList";
 import { videos } from "../helpers/videos.ts";
 import { images } from "../helpers/images.ts";
 
-import { theme } from "../theme";
+import { useIsDesktop } from "../theme";
 
 function ProjectSelector() {
   const [videoSrc, setVideoSrc] = useState(videos.loadingvideo);
 
-  const isMobile = useMediaQuery(`(max-width: ${theme?.breakpoints?.lg})`);
+  const isMobile = !useIsDesktop();
   const text_breakpoint_right = isMobile ? "0px" : "12%";
   const text_breakpoint_left = isMobile ? "10px" : "20px";
   const breakpoint_top = isMobile ? "70px" : "50px";
-  const navlink_title_breakpoint = isMobile
-    ? "clamp(3rem, 7vw, 5rem)"
-    : "clamp(3rem, 3vw, 5rem)";
 
   const tv_breakpoint_width = isMobile ? "90vw" : "40vw";
 
@@ -37,12 +33,9 @@ function ProjectSelector() {
     >
       <Group justify="flex-start">
         <div>
-          <Text
-            className="projectTitle"
-            style={{ fontSize: navlink_title_breakpoint }}
-          >
+          <Title order={2} size="h1" className="projectTitle">
             Projects
-          </Text>
+          </Title>
           <ProjectList
             links={[
               [
@@ -55,18 +48,12 @@ function ProjectSelector() {
               ["sussyscript", "SussyScript", videos.sussyscriptvideo],
             ]}
             setVideoSrc={handleVideoChange} // Pass the function to handle image change
-            style={{
-              columnCount: isMobile ? 1 : 1,
-            }}
           />
         </div>
         <div>
-          <Text
-            className="projectTitle"
-            style={{ fontSize: navlink_title_breakpoint }}
-          >
+          <Title order={2} size="h1" className="projectTitle">
             Passions
-          </Text>
+          </Title>
           <ProjectList
             links={[
               ["photography", "Photography", videos.photographyvideo],
@@ -75,9 +62,6 @@ function ProjectSelector() {
               ["keyboards", "Keyboards", videos.keyboardvideo],
             ]}
             setVideoSrc={handleVideoChange} // Pass the function to handle image change
-            style={{
-              columnCount: isMobile ? 1 : 1,
-            }}
           />
         </div>
       </Group>
@@ -137,7 +121,7 @@ function ProjectSelector() {
         />
       </div>
 
-      <div className="text">ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧</div>
+      {/* <div className="text">ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧</div> */}
     </Stack>
   );
 }
