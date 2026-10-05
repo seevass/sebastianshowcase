@@ -22,8 +22,13 @@
     --ui-nav-gap: 16px;
     --ui-header-pad: 20px;
     --ui-header-logo-h: 48px;
-    --ui-burger-size: 70px;
+    --ui-burger-size: 40px;
     --ui-footer-art-h: 300px;
+    --ui-nav-mobile-w: min(80vw, 380px); /* sidebar width when open */
+  }
+
+  .navBar {
+    width: var(--ui-nav-mobile-w) !important;
   }
 }
 
@@ -60,7 +65,7 @@
 }
 
 .mantine-Burger-root {
-  --burger-line-size: 10px;
+  --burger-line-size: 5px;
   --burger-color: var(--main-text-color);
 }
 

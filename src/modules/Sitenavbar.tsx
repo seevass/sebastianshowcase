@@ -1,4 +1,4 @@
-import { AppShell, Burger, Flex, Image, Space, Title } from "@mantine/core";
+import { AppShell, Flex, Image, Space, Title } from "@mantine/core";
 
 import { images } from "../helpers/images";
 import NavLinkItem from "../modules/NavLinkItem";
@@ -15,32 +15,24 @@ const navLinks = [
   { to: "mailto:cruzseabass@gmail.com", label: "Contact" },
 ];
 
-interface SiteNavbarProps {
-  opened: boolean;
-  onToggle: () => void;
-}
-
-export default function SiteNavbar({ opened, onToggle }: SiteNavbarProps) {
+export default function SiteNavbar() {
   return (
-    <AppShell.Navbar className="navBar" pl="var(--ui-nav-pad-left)">
-      <Flex justify="flex-end" pr={30} pt={20} style={{ zIndex: 2 }}>
-        <Burger
-          opened={opened}
-          onClick={onToggle}
-          hiddenFrom="lg"
-          size="var(--ui-burger-size)"
-          aria-label="Toggle navigation"
-        />
-      </Flex>
-
+    <AppShell.Navbar
+      className="navBar"
+      pl="var(--ui-nav-pad-left)"
+      pt={{
+        base: "calc(var(--ui-burger-size) + var(--ui-header-pad) * 2)",
+        lg: 0,
+      }}
+    >
       <Space h="sm" visibleFrom="lg" />
-      <Image
+      {/* <Image
         src={images.nametitle}
         alt="Sebastian Cruz"
         maw="70%"
         style={{ transform: "translate(3%, 20%)" }}
         visibleFrom="lg"
-      />
+      /> */}
       <Space h="2vh" visibleFrom="lg" />
 
       <div className="navContent">
@@ -48,12 +40,7 @@ export default function SiteNavbar({ opened, onToggle }: SiteNavbarProps) {
           Sebastian Cruz
         </Title>
         <Space h="2vh" />
-        <Flex
-          direction="column"
-          gap="var(--ui-nav-gap)"
-          h="80dvh"
-          style={{ overflow: "auto" }}
-        >
+        <Flex direction="column" gap="var(--ui-nav-gap)">
           {navLinks.map((link) => (
             <NavLinkItem key={link.label} {...link} />
           ))}

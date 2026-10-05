@@ -11,9 +11,6 @@ function ProjectSelector() {
   const [videoSrc, setVideoSrc] = useState(videos.loadingvideo);
 
   const isMobile = !useIsDesktop();
-  const text_breakpoint_right = isMobile ? "0px" : "12%";
-  const text_breakpoint_left = isMobile ? "10px" : "20px";
-  const breakpoint_top = isMobile ? "70px" : "50px";
 
   const tv_breakpoint_width = isMobile ? "90vw" : "40vw";
 
@@ -22,15 +19,7 @@ function ProjectSelector() {
   };
 
   return (
-    <Stack
-      align={isMobile ? "stretch" : "flex-start"}
-      justify="flex-start"
-      style={{
-        paddingRight: text_breakpoint_right,
-        paddingLeft: text_breakpoint_left,
-        paddingTop: breakpoint_top,
-      }}
-    >
+    <Stack align={isMobile ? "stretch" : "flex-start"} justify="flex-start">
       <Group justify="flex-start">
         <div>
           <Title order={2} size="h1" className="projectTitle">

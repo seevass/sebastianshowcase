@@ -1,4 +1,4 @@
-import { AppShell, Burger, Group, Image } from "@mantine/core";
+import { AppShell, Box, Burger, Group, Image } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 import "./Homepage.css";
@@ -15,37 +15,50 @@ function Homepage() {
       layout="alt"
       withBorder={false}
       navbar={{
-        width: "22vw",
+        width: "15vw",
         breakpoint: "lg",
         collapsed: { mobile: !opened },
       }}
     >
+      {/* One burger for open + close. Fixed top-left, above the sidebar and page. */}
+      <Burger
+        opened={opened}
+        onClick={toggle}
+        hiddenFrom="lg"
+        size="var(--ui-burger-size)"
+        pos="fixed"
+        top="var(--ui-header-pad)"
+        left="var(--ui-header-pad)"
+        style={{ zIndex: 300 }}
+        aria-label="Toggle navigation"
+      />
+
       <AppShell.Header className="header">
-        <Group p="var(--ui-header-pad)">
-          <Image
+        <Group
+          p="var(--ui-header-pad)"
+          pl="calc(var(--ui-header-pad) * 2 + var(--ui-burger-size))"
+        >
+          {/* <Image
             src={images.nametitle}
             alt="Sebastian Cruz"
             h="var(--ui-header-logo-h)"
             w="auto"
             hiddenFrom="lg"
-            style={{ transform: "translate(1rem, 0%)" }}
-          />
-          <Burger
-            opened={opened}
-            onClick={toggle}
-            hiddenFrom="lg"
-            size="var(--ui-burger-size)"
-            ml="auto"
-            pr={15}
-            aria-label="Toggle navigation"
-          />
+          /> */}
         </Group>
       </AppShell.Header>
 
-      <SiteNavbar opened={opened} onToggle={toggle} />
+      <SiteNavbar />
 
       <AppShell.Main className="main">
-        <ProjectSelector />
+        {/* Page padding lives here. base = mobile, lg = desktop. */}
+        <Box
+          pl={{ base: 20, lg: 20 }}
+          pr={{ base: 0, lg: "12%" }}
+          pt={{ base: 120, lg: 50 }}
+        >
+          <ProjectSelector />
+        </Box>
       </AppShell.Main>
 
       <AppShell.Aside visibleFrom="lg" className="aside">
