@@ -1,6 +1,6 @@
-import { AppShell, Flex, Image, Space, Title } from "@mantine/core";
+import { AppShell, Flex, Space, Title } from "@mantine/core";
 
-import { images } from "../helpers/images";
+// import { images } from "../helpers/images";
 import NavLinkItem from "../modules/NavLinkItem";
 
 const navLinks = [
