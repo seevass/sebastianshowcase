@@ -47,7 +47,7 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({
       rel={isExternal ? "noopener noreferrer" : undefined} // Security for external links
       w={{ base: "40vw", lg: "auto" }}
       style={{
-        color: hoverColor ?? "var(--main-text-color)",
+        color: hoverColor ?? "var(--main-yellow-color)",
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

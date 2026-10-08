@@ -1,17 +1,17 @@
 :root {
-  --main-bg-color: #fff4e2;
-  --main-text-color: #ffb800;
-  --main-header-color: #393939;
+  --main-white-color: #fff4e2;
+  --main-yellow-color: #ffb800;
   --main-pink-color: #ff9188;
   --main-blue-color: #3d6fbf;
+  --sub-blue-color: #315a9a;
   --main-hot-pink-color: #f75d64;
-  --green-color: #7ea151;
+  --main-green-color: #7ea151;
 
   /* ---- Component sizes: desktop ---- */
   --ui-nav-pad-left: 40px;
   --ui-nav-gap: 28px;
-  --ui-aside-art-w: 25vw;
-  --ui-aside-art-pad: 5vw;
+  --ui-aside-art-w: 20vw;
+  --ui-aside-art-pad: 0vw;
 }
 
 /* ---- Component sizes: mobile ----
@@ -32,20 +32,22 @@
   }
 }
 
-.main,
-.header,
+.main {
+  background-color: var(--main-blue-color) !important;
+}
+
 .navBar {
-  background-color: var(--main-bg-color) !important;
+  background-color: var(--main-green-color) !important;
 }
 
 .footer,
 .aside {
-  background-color: transparent !important;
+  background-color: var(--main-green-color) !important;
   pointer-events: none;
 }
 
 .nameTitle {
-  color: var(--main-header-color);
+  color: var(--main-white-color);
   padding-left: 13px;
   padding-top: 20px;
 }
@@ -66,7 +68,7 @@
 
 .mantine-Burger-root {
   --burger-line-size: 5px;
-  --burger-color: var(--main-text-color);
+  --burger-color: var(--main-yellow-color);
 }
 
 .non-selectable,

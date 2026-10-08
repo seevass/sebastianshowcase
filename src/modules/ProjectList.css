@@ -1,22 +1,19 @@
-.projectLink{
-    background-color: transparent !important;
-    transform: translateX(-0.75em);
+.projectLink {
+  background-color: transparent !important;
+  transform: translateX(-0.75em);
 }
 
 .projectLink .mantine-NavLink-label {
-    font-weight: 700;
-    color: var(--main-blue-color);
+  font-weight: 700;
+  color: var(--main-blue-color);
 }
 
 .projectLink .mantine-NavLink-label:hover {
-    color: var(--main-hot-pink-color);
-    transition: color 0.3s ease;
+  color: var(--main-hot-pink-color);
+  transition: color 0.3s ease;
 }
 
 .projectLinkTitle {
-    font-weight: 700;
-    color: var(--main-header-color);
+  font-weight: 700;
+  color: var(--main-white-color);
 }
-
-
-

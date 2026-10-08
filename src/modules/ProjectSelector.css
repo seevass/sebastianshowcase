@@ -1,16 +1,16 @@
 .overlapping-image {
-    z-index: 2;
+  z-index: 2;
 }
 
 .background-image {
-    z-index: 1;
+  z-index: 1;
 }
 
 .projectTitle {
-    font-weight: 700;
-    color: var(--main-header-color)
+  font-weight: 700;
+  color: var(--main-white-color);
 }
 
 .text {
-    color: var(--main-text-color)
+  color: var(--main-yellow-color);
 }

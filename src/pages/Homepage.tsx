@@ -6,19 +6,23 @@ import { images } from "../helpers/images";
 
 import ProjectSelector from "../modules/ProjectSelector";
 import SiteNavbar from "../modules/Sitenavbar";
+import Taskbar from "../modules/Taskbar";
+import Window from "../modules/Window";
 
 function Homepage() {
   const [opened, { toggle }] = useDisclosure(false);
 
   return (
     <AppShell
-      layout="alt"
-      withBorder={false}
+      layout="default"
+      header={{ height: { base: 60, lg: 0 } }}
+      footer={{ height: { base: 60, lg: 40 } }}
       navbar={{
         width: "15vw",
         breakpoint: "lg",
         collapsed: { mobile: !opened },
       }}
+      withBorder={false}
     >
       {/* One burger for open + close. Fixed top-left, above the sidebar and page. */}
       <Burger
@@ -33,21 +37,6 @@ function Homepage() {
         aria-label="Toggle navigation"
       />
 
-      <AppShell.Header className="header">
-        <Group
-          p="var(--ui-header-pad)"
-          pl="calc(var(--ui-header-pad) * 2 + var(--ui-burger-size))"
-        >
-          {/* <Image
-            src={images.nametitle}
-            alt="Sebastian Cruz"
-            h="var(--ui-header-logo-h)"
-            w="auto"
-            hiddenFrom="lg"
-          /> */}
-        </Group>
-      </AppShell.Header>
-
       <SiteNavbar />
 
       <AppShell.Main className="main">
@@ -57,30 +46,40 @@ function Homepage() {
           pr={{ base: 0, lg: "12%" }}
           pt={{ base: 120, lg: 50 }}
         >
-          <ProjectSelector />
+          <Window
+            title="Projects"
+            width="min(600px, 100%)"
+            height={450}
+            bg="var(--main-blue-color)"
+          >
+            <ProjectSelector />
+          </Window>
         </Box>
       </AppShell.Main>
 
       <AppShell.Aside visibleFrom="lg" className="aside">
-        <Image
-          src={images.tattoovertical}
-          alt=""
-          w="var(--ui-aside-art-w)"
-          maw="100%"
-          mah="100%"
-          pr="var(--ui-aside-art-pad)"
-        />
+        <Window
+          title="tattoo.gif"
+          width="min(600px, 95%)"
+          height="100%"
+          bg="var(--main-white-color)"
+          align="center"
+        >
+          <Image
+            src={images.tattoovertical}
+            alt=""
+            w="var(--ui-aside-art-w)"
+            maw="100%"
+            mah="100%"
+            pr="var(--ui-aside-art-pad)"
+          />
+        </Window>
       </AppShell.Aside>
 
-      <AppShell.Footer hiddenFrom="lg" className="footer" w="100%">
-        <Image
-          src={images.tattoohorizontal}
-          alt=""
-          h="var(--ui-footer-art-h)"
-          w="auto"
-          maw="100%"
-          mah="100%"
-        />
+      <AppShell.Footer className="footer">
+        <Box h="100%">
+          <Taskbar />
+        </Box>
       </AppShell.Footer>
     </AppShell>
   );
