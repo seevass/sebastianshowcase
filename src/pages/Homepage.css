@@ -46,6 +46,10 @@
   pointer-events: none;
 }
 
+.aside .window {
+  pointer-events: auto;
+}
+
 .nameTitle {
   color: var(--main-white-color);
   padding-left: 13px;

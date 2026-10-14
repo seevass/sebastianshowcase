@@ -10,6 +10,8 @@ interface WindowProps {
   height?: CSSProperties["height"];
   bg?: string;
   align?: "left" | "center" | "right";
+  scroll?: boolean;
+  style?: CSSProperties;
 }
 
 function Window({
@@ -19,17 +21,24 @@ function Window({
   height = "auto",
   bg,
   align = "left",
+  scroll = true,
+  style,
 }: WindowProps) {
   return (
     <Box
       className="window"
-      style={{ width, height }}
+      style={{ width, height, ...style }}
       bg={bg}
       ml={align === "left" ? undefined : "auto"}
       mr={align === "right" ? undefined : "auto"}
     >
       <Text className="window-title">{title}</Text>
-      <Box className="window-body">{children}</Box>
+      <Box
+        className="window-body"
+        style={{ overflow: scroll ? "auto" : "hidden" }}
+      >
+        {children}
+      </Box>
     </Box>
   );
 }

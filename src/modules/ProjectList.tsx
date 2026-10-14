@@ -2,23 +2,21 @@ import React, { useEffect } from "react";
 import "./ProjectList.css";
 import { Text, NavLink } from "@mantine/core";
 
+import { useVideo } from "./VideoContext";
+
 type ProjectListTuple = [href: string, label: string, video: string];
 
 interface ProjectListProps {
   title?: string | undefined;
   links: ProjectListTuple[];
-  setVideoSrc: (videoSrc: string) => void;
   style?: React.CSSProperties;
 }
 
 const BASE_PATH = "/sebastianshowcase";
 
-const ProjectList: React.FC<ProjectListProps> = ({
-  title,
-  links,
-  setVideoSrc,
-  style,
-}) => {
+const ProjectList: React.FC<ProjectListProps> = ({ title, links, style }) => {
+  const { setVideoSrc } = useVideo();
+
   const adjustedHref = (href: string) => `${BASE_PATH}#${href}`;
 
   // Preload videos on mount (optional but helpful if you're using autoplay/hover)
