@@ -1,19 +1,22 @@
-import { AppShell, Box, Burger, Group, Image } from "@mantine/core";
+import { AppShell, Box, Burger, Group, Image, Space } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 import "./Homepage.css";
 import { images } from "../helpers/images";
 
-import ProjectSelector from "../modules/ProjectSelector";
 import SiteNavbar from "../modules/Sitenavbar";
 import Taskbar from "../modules/Taskbar";
 import Window from "../modules/Window";
 import { VideoProvider } from "../modules/VideoContext";
 import TvPlayer from "../modules/TvPlayer";
 import ActivityList from "../modules/ActivityList";
+import HomeAbout from "../modules/HomeAbout";
+
+import { useIsDesktop } from "../theme";
 
 function Homepage() {
   const [opened, { toggle }] = useDisclosure(false);
+  const isDesktop = useIsDesktop();
 
   return (
     <VideoProvider>
@@ -39,25 +42,34 @@ function Homepage() {
           top="var(--ui-header-pad)"
           left="var(--ui-header-pad)"
           style={{ zIndex: 300 }}
-          aria-label="Toggle navigation"
         />
 
-        <SiteNavbar />
+        <AppShell.Navbar className="navBar">
+          <Window title="me.exe">
+            <HomeAbout />
+          </Window>
+
+          {isDesktop && (
+            <>
+              <Space h="md" />
+              <Window
+                title="activities"
+                width="100%"
+                bg="var(--main-yellow-color)"
+              >
+                <ActivityList />
+              </Window>
+            </>
+          )}
+        </AppShell.Navbar>
 
         <AppShell.Main className="main">
-          {/* Page padding lives here. base = mobile, lg = desktop. */}
-          <Box
-            pl={{ base: 20, lg: 20 }}
-            pr={{ base: 0, lg: 0 }}
-            pt={{ base: 120, lg: 10 }}
-          >
-            <Window title="tv.exe" width="min(600px, 100%)">
-              <TvPlayer />
-            </Window>
-            <Window title="projects" width="100%">
-              <ActivityList />
-            </Window>
-          </Box>
+          <Window title="tv.exe" width="min(600px, 100%)">
+            <TvPlayer />
+          </Window>
+          <Window title="projects" width="100%">
+            <ActivityList />
+          </Window>
         </AppShell.Main>
 
         <AppShell.Aside visibleFrom="lg" className="aside">

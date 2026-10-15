@@ -1,46 +1,68 @@
 import { createTheme, mergeThemeOverrides } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
-// Desktop = 1510px and up. Mobile = below that. This is the only breakpoint.
-const DESKTOP_MIN_WIDTH = "1510px";
+// Wide desktop = 1510px and up. Mobile/smaller layouts = below that.
+const WIDE_LAYOUT_MIN_WIDTH = "1510px";
 
 // ---------------------------------------------------------------
 // DESKTOP: all the font settings
 // ---------------------------------------------------------------
-export const desktopTheme = createTheme({
-  breakpoints: {
-    lg: DESKTOP_MIN_WIDTH,
-  },
 
-  // Body text, buttons, nav links
-  fontFamily: "Poppins, system-ui, sans-serif",
+export const desktopTheme = createTheme({
+  breakpoints: { lg: WIDE_LAYOUT_MIN_WIDTH },
+
+  fontFamily: "Tahoma, Verdana, Geneva, sans-serif",
 
   fontSizes: {
-    xs: "12px", // fine print
-    sm: "14px", // captions, hints
-    md: "16px", // body text, buttons
-    lg: "18px",
-    xl: "20px",
+    xs: "12px",
+    sm: "14px",
+    md: "16px",
+    lg: "20px",
+    xl: "24px",
+    display: "48px",
   },
 
+  // Consistent gaps and padding
+  spacing: {
+    xs: "4px",
+    sm: "8px",
+    md: "12px",
+    lg: "16px",
+    xl: "24px",
+  },
+
+  // Consistent line spacing
   lineHeights: {
-    md: "1.6", // body text
+    xs: "1.2",
+    sm: "1.4",
+    md: "1.6",
+    lg: "1.8",
+    xl: "2",
   },
 
-  // Every <Title> (h1-h6)
   headings: {
     fontFamily: "'Redaction 50', Georgia, serif",
-    fontWeight: "400", // use "700" for the Bold cut
+    fontWeight: "400",
     sizes: {
-      h1: { fontSize: "48px", lineHeight: "1.1" }, // name / page title
+      h1: { fontSize: "48px", lineHeight: "1.1" },
       h2: { fontSize: "32px", lineHeight: "1.2" },
       h3: { fontSize: "24px", lineHeight: "1.3" },
+      h4: { fontSize: "20px", lineHeight: "1.3" },
     },
   },
 
   components: {
-    Text: { defaultProps: { lh: 1.6 } },
-    Button: { defaultProps: { size: "md", fw: 600 } },
+    Text: {
+      defaultProps: {
+        lh: "md",
+      },
+    },
+    Button: {
+      defaultProps: {
+        size: "md",
+        fw: 400,
+      },
+    },
   },
 });
 
@@ -55,22 +77,16 @@ export const mobileTheme = mergeThemeOverrides(
         h1: { fontSize: "40px" },
         h2: { fontSize: "28px" },
         h3: { fontSize: "20px" },
+        h4: { fontSize: "18px" },
       },
-    },
-    fontSizes: {
-      xs: "12px", // fine print
-      sm: "14px", // captions, hints
-      md: "16px", // body text, buttons
-      lg: "18px",
-      xl: "20px",
     },
   }),
 );
 
-// True on desktop, false on mobile. Use this instead of useMediaQuery.
+// True on wide desktop, false on smaller layouts.
 export function useIsDesktop() {
-  return useMediaQuery(`(min-width: ${DESKTOP_MIN_WIDTH})`, true, {
-    getInitialValueInEffect: false, // read the width immediately, no flash
+  return useMediaQuery(`(min-width: ${WIDE_LAYOUT_MIN_WIDTH})`, true, {
+    getInitialValueInEffect: false,
   });
 }
 

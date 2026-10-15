@@ -1,9 +1,9 @@
 .navLink {
-  color: var(--main-yellow-color);
+  color: var(--main-white-color);
   background-color: transparent !important;
   transition: color 0.3s ease;
 }
 
-.navLink .mantine-NavLink-label {
-  font-weight: 700;
+.navLink:hover {
+  color: var(--main-yellow-color);
 }

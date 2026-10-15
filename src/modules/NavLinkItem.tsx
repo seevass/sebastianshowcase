@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "@mantine/core";
 import "./NavLinkItem.css";
-import { getRandomHoverColor } from "../helpers/colorUtils";
 
 const BASE_PATH = "/sebastianshowcase"; // Global base path for GitHub Pages
 
@@ -16,18 +15,6 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({
   label,
   isExternal = false,
 }) => {
-  const [hoverColor, setHoverColor] = useState<string | null>(null);
-
-  const handleMouseEnter = () => {
-    if (!hoverColor) {
-      setHoverColor(getRandomHoverColor());
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setHoverColor(null);
-  };
-
   // Adjust internal link to add the base path and hash prefix
   const adjustedHref = isExternal
     ? to
@@ -46,13 +33,8 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({
       target={isExternal ? "_blank" : undefined} // Opens in a new tab if external
       rel={isExternal ? "noopener noreferrer" : undefined} // Security for external links
       w={{ base: "40vw", lg: "auto" }}
-      style={{
-        color: hoverColor ?? "var(--main-yellow-color)",
-      }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       styles={{
-        label: { fontSize: "var(--mantine-h2-font-size)" },
+        label: { fontSize: "var(--mantine-h2-font-size)", fontWeight: 400 },
       }}
     />
   );
