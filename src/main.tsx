@@ -4,7 +4,8 @@ import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
-import "./fonts/redaction/fonts.css";
+import "./fonts/redaction/redaction.css";
+import "./fonts/ari-w9500/ari-w9500.css";
 
 import App from "./App.tsx";
 import { useSiteTheme } from "./theme";

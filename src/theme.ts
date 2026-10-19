@@ -11,7 +11,7 @@ const WIDE_LAYOUT_MIN_WIDTH = "1510px";
 export const desktopTheme = createTheme({
   breakpoints: { lg: WIDE_LAYOUT_MIN_WIDTH },
 
-  fontFamily: "Tahoma, Verdana, Geneva, sans-serif",
+  fontFamily: "'Ari W9500', Arial, Helvetica, sans-serif",
 
   fontSizes: {
     xs: "12px",
@@ -33,11 +33,11 @@ export const desktopTheme = createTheme({
 
   // Consistent line spacing
   lineHeights: {
-    xs: "1.2",
-    sm: "1.4",
-    md: "1.6",
-    lg: "1.8",
-    xl: "2",
+    xs: "0.6",
+    sm: "0.8",
+    md: "1",
+    lg: "1.2",
+    xl: "1.4",
   },
 
   headings: {

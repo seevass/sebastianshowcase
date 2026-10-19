@@ -4,7 +4,6 @@ import { useDisclosure } from "@mantine/hooks";
 import "./Homepage.css";
 import { images } from "../helpers/images";
 
-import SiteNavbar from "../modules/Sitenavbar";
 import Taskbar from "../modules/Taskbar";
 import Window from "../modules/Window";
 import { VideoProvider } from "../modules/VideoContext";
@@ -44,14 +43,14 @@ function Homepage() {
           style={{ zIndex: 300 }}
         />
 
-        <AppShell.Navbar className="navBar">
+        <AppShell.Navbar className="navBar" p="sm">
           <Window title="me.exe">
             <HomeAbout />
           </Window>
 
           {isDesktop && (
             <>
-              <Space h="md" />
+              <Space h="sm" />
               <Window
                 title="activities"
                 width="100%"
@@ -64,15 +63,20 @@ function Homepage() {
         </AppShell.Navbar>
 
         <AppShell.Main className="main">
-          <Window title="tv.exe" width="min(600px, 100%)">
-            <TvPlayer />
-          </Window>
-          <Window title="projects" width="100%">
-            <ActivityList />
-          </Window>
+          <Box p="sm">
+            <Window title="tv.exe" width="min(600px, 100%)">
+              <TvPlayer />
+            </Window>
+
+            <Space h="sm" />
+
+            <Window title="projects" width="100%">
+              <ActivityList />
+            </Window>
+          </Box>
         </AppShell.Main>
 
-        <AppShell.Aside visibleFrom="lg" className="aside">
+        <AppShell.Aside visibleFrom="lg" className="aside" p="sm">
           <Window
             title="tattoo.gif"
             width="100%"

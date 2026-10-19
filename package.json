@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fontsource/cascadia-mono": "^5.3.0",
     "@fontsource/poppins": "^5.3.0",
     "@mantine/core": "^9.7.1",
     "@mantine/dates": "^9.7.1",

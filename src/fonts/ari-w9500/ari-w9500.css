@@ -1,0 +1,49 @@
+/* Standard width */
+@font-face {
+  font-family: "Ari W9500";
+  src: url("./Ari-W9500-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ari W9500";
+  src: url("./Ari-W9500-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ari W9500";
+  src: url("./Ari-W9500-Display.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed */
+@font-face {
+  font-family: "Ari W9500 Condensed";
+  src: url("./Ari-W9500-Condensed-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ari W9500 Condensed";
+  src: url("./Ari-W9500-Condensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ari W9500 Condensed";
+  src: url("./Ari-W9500-Condensed-Display.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

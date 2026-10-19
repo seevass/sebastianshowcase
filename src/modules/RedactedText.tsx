@@ -1,33 +1,43 @@
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 
-// Order the animation steps through. 0 = the plain "Redaction" font.
-const LEVELS = [100, 70, 50, 35, 20, 10, 0];
+// Ordered from least degraded to most degraded.
+// 0 = the plain "Redaction" font (cleanest), 100 = most degraded.
+const LEVELS = [0, 10, 20, 35, 50, 70, 100];
 
 const family = (n: number) => (n === 0 ? "'Redaction'" : `'Redaction ${n}'`);
 
 interface RedactedTextProps {
   children: ReactNode;
-  from?: number; // cut reached on hover
-  to?: number; // resting cut
+  from?: number; // resting level (no hover)
+  to?: number; // level reached on hover
   speed?: number; // ms per step
+  weight?: 400 | 700; // fixed, so it never inherits from the parent
 }
 
 function RedactedText({
   children,
-  from = 50,
-  to = 10,
+  from = 0,
+  to = 50,
   speed = 80,
+  weight = 400,
 }: RedactedTextProps) {
-  const [level, setLevel] = useState(to);
-  const levelRef = useRef(to);
+  const [level, setLevel] = useState(from);
+  const levelRef = useRef(from);
   const timer = useRef<number | undefined>(undefined);
+
+  // Reset to the resting level whenever `from` changes (also fixes stale state after hot reload)
+  useEffect(() => {
+    window.clearInterval(timer.current);
+    levelRef.current = from;
+    setLevel(from);
+  }, [from]);
 
   // Load every cut up front so the first hover doesn't flicker
   useEffect(() => {
-    LEVELS.forEach((n) => document.fonts.load(`16px ${family(n)}`));
+    LEVELS.forEach((n) => document.fonts.load(`${weight} 16px ${family(n)}`));
     return () => window.clearInterval(timer.current);
-  }, []);
+  }, [weight]);
 
   const stepTo = (target: number) => {
     window.clearInterval(timer.current);
@@ -42,9 +52,13 @@ function RedactedText({
 
   return (
     <span
-      onMouseEnter={() => stepTo(from)}
-      onMouseLeave={() => stepTo(to)}
-      style={{ fontFamily: `${family(level)}, Georgia, serif` }}
+      onMouseEnter={() => stepTo(to)}
+      onMouseLeave={() => stepTo(from)}
+      style={{
+        fontFamily: `${family(level)}, Georgia, serif`,
+        fontWeight: weight,
+        fontStyle: "normal",
+      }}
     >
       {children}
     </span>
