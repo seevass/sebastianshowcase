@@ -44,8 +44,15 @@ function Homepage() {
         />
 
         <AppShell.Navbar className="navBar" p="sm">
-          <Window title="me.exe">
-            <HomeAbout />
+          <Window
+            title="me.exe"
+            scroll={false}
+            minWidth="222px"
+            minHeight="90px"
+          >
+            <Box p="sm">
+              <HomeAbout />
+            </Box>
           </Window>
 
           {isDesktop && (

@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-thin-italic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-extra-light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-extra-light-italic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-light-italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-book-italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-medium-italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-demi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-demi-italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-bold-italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-extra-bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-extra-bold-italic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-heavy-italic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("fonts/franklin-gothic-regular-condensed.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: 75%;
+  font-display: swap;
+}

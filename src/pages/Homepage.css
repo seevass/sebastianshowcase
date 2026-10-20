@@ -1,11 +1,13 @@
 :root {
   --main-white-color: #fff4e2;
+  --sub-white-color: #c9bfae;
   --main-yellow-color: #ffb800;
   --main-pink-color: #ff9188;
   --main-blue-color: #3d6fbf;
   --sub-blue-color: #315a9a;
   --main-hot-pink-color: #f75d64;
   --main-green-color: #7ea151;
+  --blended-bg-color: rgb(255 244 226 / 0.5);
 
   --space-xs: 4px;
   --space-sm: 8px;

@@ -11,7 +11,7 @@ const WIDE_LAYOUT_MIN_WIDTH = "1510px";
 export const desktopTheme = createTheme({
   breakpoints: { lg: WIDE_LAYOUT_MIN_WIDTH },
 
-  fontFamily: "'Ari W9500', Arial, Helvetica, sans-serif",
+  fontFamily: "'Franklin Gothic', Arial, Helvetica, sans-serif",
 
   fontSizes: {
     xs: "12px",

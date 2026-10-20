@@ -13,6 +13,7 @@ interface RedactedTextProps {
   to?: number; // level reached on hover
   speed?: number; // ms per step
   weight?: 400 | 700; // fixed, so it never inherits from the parent
+  italic?: boolean; // defaults to normal (upright)
 }
 
 function RedactedText({
@@ -21,6 +22,7 @@ function RedactedText({
   to = 50,
   speed = 80,
   weight = 400,
+  italic = false,
 }: RedactedTextProps) {
   const [level, setLevel] = useState(from);
   const levelRef = useRef(from);
@@ -35,9 +37,12 @@ function RedactedText({
 
   // Load every cut up front so the first hover doesn't flicker
   useEffect(() => {
-    LEVELS.forEach((n) => document.fonts.load(`${weight} 16px ${family(n)}`));
+    const style = italic ? "italic" : "normal";
+    LEVELS.forEach((n) =>
+      document.fonts.load(`${style} ${weight} 16px ${family(n)}`),
+    );
     return () => window.clearInterval(timer.current);
-  }, [weight]);
+  }, [weight, italic]);
 
   const stepTo = (target: number) => {
     window.clearInterval(timer.current);
@@ -57,7 +62,7 @@ function RedactedText({
       style={{
         fontFamily: `${family(level)}, Georgia, serif`,
         fontWeight: weight,
-        fontStyle: "normal",
+        fontStyle: italic ? "italic" : "normal",
       }}
     >
       {children}

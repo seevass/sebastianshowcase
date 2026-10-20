@@ -8,6 +8,8 @@ interface WindowProps {
   children: ReactNode;
   width?: CSSProperties["width"];
   height?: CSSProperties["height"];
+  minWidth?: CSSProperties["minWidth"];
+  minHeight?: CSSProperties["minHeight"];
   bg?: string;
   align?: "left" | "center" | "right";
   scroll?: boolean;
@@ -19,6 +21,8 @@ function Window({
   children,
   width = "100%",
   height = "auto",
+  minWidth,
+  minHeight,
   bg,
   align = "left",
   scroll = true,
@@ -27,12 +31,14 @@ function Window({
   return (
     <Box
       className="window"
-      style={{ width, height, ...style }}
+      style={{ width, height, minWidth, minHeight, ...style }}
       bg={bg}
       ml={align === "left" ? undefined : "auto"}
       mr={align === "right" ? undefined : "auto"}
     >
-      <Text className="window-title">{title}</Text>
+      <Text className="window-title">
+        <span className="window-title-text">{title}</span>
+      </Text>
       <Box
         className="window-body"
         style={{ overflow: scroll ? "auto" : "hidden" }}

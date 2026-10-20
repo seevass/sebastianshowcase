@@ -8,20 +8,35 @@
   background: var(--main-blue-color);
   border: 4px solid var(--main-yellow-color);
   border-radius: 4px 4px 0 0;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
   resize: both;
   overflow: hidden;
 }
 
 .window-title {
+  flex-shrink: 0;
   background: var(--main-yellow-color);
   color: var(--main-white-color);
+  /* font-family: "Px437 IBM VGA", "Cascadia Mono", "Consolas", monospace; */
   font-weight: 700;
   padding: 4px 8px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  cursor: default;
+  position: relative;
+}
+
+.window-title-text {
+  position: relative;
+  top: -2px;
+  left: -4px;
 }
 
 .window-body {
   flex: 1;
   min-height: 0;
   overflow: auto;
-  padding: 0px;
 }
