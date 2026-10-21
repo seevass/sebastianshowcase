@@ -6,7 +6,7 @@ import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
 import "./fonts/redaction/redaction.css";
 import "./fonts/ari-w9500/ari-w9500.css";
-import "./fonts/franklin-gothic/franklinGothic.css";
+import "./fonts/franklin-gothic/franklin-gothic.css";
 
 import App from "./App.tsx";
 import { useSiteTheme } from "./theme";
