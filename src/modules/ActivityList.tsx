@@ -1,29 +1,57 @@
-import { Group } from "@mantine/core";
-import ProjectList from "./ProjectList";
-import { videos } from "../helpers/videos.ts";
+import { openProject } from "../helpers/projects";
+import type { Project } from "../helpers/projects";
+import { useProject } from "./ProjectContext";
+import "./ActivityList.css";
 
-function ActivityList() {
+interface ActivityListProps {
+  address: string; // the text shown in the address bar
+  items: Project[]; // the rows
+}
+
+function ActivityList({ address, items }: ActivityListProps) {
+  const { selectedId, setSelectedId } = useProject();
+
   return (
-    <Group align="flex-start" gap="xl">
-      <ProjectList
-        title="Projects"
-        links={[
-          ["keyboardwarrior", "Keyboard Warrior", videos.keyboardwarriorvideo],
-          ["quickcast", "Quickcast", videos.quickcastvideo],
-          ["blendify", "Blendify", videos.blendifyvideo],
-          ["sussyscript", "SussyScript", videos.sussyscriptvideo],
-        ]}
-      />
-      <ProjectList
-        title="Passions"
-        links={[
-          ["photography", "Photography", videos.photographyvideo],
-          ["nishikigoi", "Nishikigoi", videos.nishikigoivideo],
-          ["graphicdesign", "Graphic Design", videos.graphicdesignvideo],
-          ["keyboards", "Keyboards", videos.keyboardvideo],
-        ]}
-      />
-    </Group>
+    <div className="explorer">
+      <div className="explorer-toolbar" />
+
+      <div className="explorer-address">
+        <span>Address</span>
+        <span className="explorer-address-path">{address}</span>
+      </div>
+
+      <div className="explorer-row explorer-header">
+        <span>Name</span>
+        <span>Type</span>
+      </div>
+
+      <div className="explorer-list" role="listbox">
+        {items.map((p) => (
+          <div
+            key={p.id}
+            role="option"
+            aria-selected={p.id === selectedId}
+            tabIndex={0}
+            className={`explorer-row explorer-item${p.id === selectedId ? " is-selected" : ""}`}
+            onClick={(e) => {
+              e.stopPropagation(); // don't let this count as a click on the window
+              setSelectedId(p.id);
+            }}
+            onDoubleClick={() => openProject(p)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") openProject(p);
+              if (e.key === " ") {
+                e.preventDefault();
+                setSelectedId(p.id);
+              }
+            }}
+          >
+            <span>{p.name}</span>
+            <span>{p.tags.join(", ")}</span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

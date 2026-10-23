@@ -1,4 +1,4 @@
-import { AppShell, Box, Burger, Group, Image, Space } from "@mantine/core";
+import { AppShell, Box, Burger, Image, Space } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 import "./Homepage.css";
@@ -6,9 +6,10 @@ import { images } from "../helpers/images";
 
 import Taskbar from "../modules/Taskbar";
 import Window from "../modules/Window";
-import { VideoProvider } from "../modules/VideoContext";
+import { ProjectProvider } from "../modules/ProjectContext";
 import TvPlayer from "../modules/TvPlayer";
-import ActivityList from "../modules/ActivityList";
+import ProjectInfo from "../modules/ProjectInfo";
+import ActivityWindows from "../modules/ActivityWindows";
 import HomeAbout from "../modules/HomeAbout";
 
 import { useIsDesktop } from "../theme";
@@ -18,7 +19,7 @@ function Homepage() {
   const isDesktop = useIsDesktop();
 
   return (
-    <VideoProvider>
+    <ProjectProvider>
       <AppShell
         layout="default"
         header={{ height: { base: 60, lg: 0 } }}
@@ -58,13 +59,7 @@ function Homepage() {
           {isDesktop && (
             <>
               <Space h="sm" />
-              <Window
-                title="activities"
-                width="100%"
-                bg="var(--main-yellow-color)"
-              >
-                <ActivityList />
-              </Window>
+              <ActivityWindows />
             </>
           )}
         </AppShell.Navbar>
@@ -73,13 +68,12 @@ function Homepage() {
           <Box p="sm">
             <Window title="tv.exe" width="min(600px, 100%)">
               <TvPlayer />
+              <ProjectInfo />
             </Window>
 
-            <Space h="sm" />
+            <Space h="sm" hiddenFrom="lg" />
 
-            <Window title="projects" width="100%">
-              <ActivityList />
-            </Window>
+            {!isDesktop && <ActivityWindows />}
           </Box>
         </AppShell.Main>
 
@@ -107,7 +101,7 @@ function Homepage() {
           </Box>
         </AppShell.Footer>
       </AppShell>
-    </VideoProvider>
+    </ProjectProvider>
   );
 }
 
