@@ -1,0 +1,198 @@
+.watch {
+  container-type: inline-size; /* lets the layout react to the window's width */
+  background: var(--main-white-color);
+  color: var(--sub-blue-color);
+}
+
+/* ---------- fake browser bar ---------- */
+.watch-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--sub-blue-color);
+  color: var(--main-white-color);
+  pointer-events: none;
+  user-select: none;
+  cursor: default;
+}
+
+.watch-url {
+  flex: 1;
+  min-width: 0;
+  padding: 1px 8px;
+  background: var(--main-white-color);
+  color: var(--sub-blue-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- fake site header ---------- */
+.watch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--sub-blue-color);
+  pointer-events: none;
+  user-select: none;
+  cursor: default;
+}
+
+.watch-logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--mantine-font-family-headings);
+  font-size: var(--mantine-font-size-xl);
+  line-height: 1;
+}
+
+.watch-logo-block {
+  padding: 2px 6px;
+  background: var(--main-hot-pink-color);
+  color: var(--main-white-color);
+}
+
+.watch-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 220px;
+  min-width: 0;
+  padding: 2px 8px;
+  background: #fff;
+  border: 2px solid var(--sub-blue-color);
+}
+
+/* ---------- body: one column, two when the window is wide ---------- */
+.watch-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px;
+}
+
+.watch-related {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  user-select: none;
+  cursor: default;
+}
+
+@container (min-width: 560px) {
+  .watch-body {
+    grid-template-columns: minmax(0, 1fr) 190px;
+  }
+  .watch-related {
+    display: flex;
+  }
+}
+
+/* ---------- title, channel row ---------- */
+.watch-title {
+  margin: 10px 0 6px;
+  font-family: var(--mantine-font-family-headings);
+  font-size: var(--mantine-h3-font-size);
+  line-height: 1.2;
+}
+
+.watch-channel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.watch-avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--main-pink-color);
+}
+
+.watch-avatar-sm {
+  width: 24px;
+  height: 24px;
+}
+
+.watch-open {
+  margin-left: auto;
+  padding: 4px 14px;
+  border: none;
+  background: var(--main-hot-pink-color);
+  color: var(--main-white-color);
+  font: inherit;
+  cursor: pointer;
+}
+
+.watch-open:disabled {
+  background: var(--main-pink-color);
+  cursor: default;
+}
+
+/* ---------- description + tags ---------- */
+.watch-description {
+  margin-top: 10px;
+  padding: 8px;
+  background: #fff;
+  border: 2px solid var(--sub-blue-color);
+}
+
+.watch-tags {
+  margin-top: 6px;
+  color: var(--main-blue-color);
+}
+
+/* ---------- fake comments ---------- */
+.watch-comments {
+  margin-top: 14px;
+  pointer-events: none;
+  user-select: none;
+  cursor: default;
+}
+
+.watch-comments-title {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.watch-comment {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.watch-comment-user {
+  font-weight: 700;
+}
+
+/* ---------- fake recommended videos ---------- */
+.watch-rec {
+  display: flex;
+  gap: 8px;
+}
+
+.watch-rec-thumb {
+  width: 72px;
+  height: 46px;
+  flex-shrink: 0;
+}
+
+.watch-rec-text {
+  min-width: 0;
+}
+
+.watch-rec-title {
+  line-height: 1.2;
+}
+
+.watch-rec-meta {
+  margin-top: 2px;
+  color: var(--main-blue-color);
+  font-size: var(--mantine-font-size-xs);
+}

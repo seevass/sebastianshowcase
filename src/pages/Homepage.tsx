@@ -11,6 +11,7 @@ import TvPlayer from "../modules/TvPlayer";
 import ProjectInfo from "../modules/ProjectInfo";
 import ActivityWindows from "../modules/ActivityWindows";
 import HomeAbout from "../modules/HomeAbout";
+import WatchPage from "../modules/WatchPage";
 
 import { useIsDesktop } from "../theme";
 
@@ -76,8 +77,7 @@ function Homepage() {
                   : "calc(100dvh - 136px)",
               }}
             >
-              <TvPlayer />
-              <ProjectInfo />
+              <WatchPage />
             </Window>
 
             <Space h="sm" hiddenFrom="lg" />
