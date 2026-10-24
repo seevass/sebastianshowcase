@@ -17,7 +17,7 @@ function Folder({ title, address, items }: FolderProps) {
 
   return (
     <div onClick={() => setSelectedId(null)}>
-      <Window title={title} width="100%">
+      <Window title={title} width="100%" bg="var(--main-white-color)">
         <ActivityList address={address} items={items} />
       </Window>
     </div>

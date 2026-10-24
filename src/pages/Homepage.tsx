@@ -66,7 +66,16 @@ function Homepage() {
 
         <AppShell.Main className="main">
           <Box p="sm">
-            <Window title="tv.exe" width="min(600px, 100%)">
+            <Window
+              title="tv.exe"
+              width="min(600px, 100%)"
+              scroll={false}
+              style={{
+                maxHeight: isDesktop
+                  ? "calc(100dvh - 56px)"
+                  : "calc(100dvh - 136px)",
+              }}
+            >
               <TvPlayer />
               <ProjectInfo />
             </Window>
