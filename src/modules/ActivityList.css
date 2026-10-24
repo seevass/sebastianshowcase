@@ -26,7 +26,7 @@
   flex: 1;
   min-width: 0;
   padding: 2px 6px;
-  background: #fff;
+  background: var(--main-white-color);
   border: 2px solid var(--main-blue-color);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -36,7 +36,7 @@
 /* shared column layout: name | type */
 .explorer-row {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1.2fr 1.3fr;
   gap: 8px;
   padding: 2px 8px;
 }
@@ -60,6 +60,7 @@
 .explorer-item {
   touch-action: manipulation; /* no double-tap zoom delay on phones */
   outline: none;
+  height: 24px;
 }
 
 .explorer-item:hover,

@@ -1,6 +1,7 @@
 import { openProject } from "../helpers/projects";
 import type { Project } from "../helpers/projects";
 import { useProject } from "./ProjectContext";
+import { Space } from "@mantine/core";
 import "./ActivityList.css";
 
 interface ActivityListProps {
@@ -51,6 +52,7 @@ function ActivityList({ address, items }: ActivityListProps) {
           </div>
         ))}
       </div>
+      <Space h="sm" />
     </div>
   );
 }
