@@ -9,7 +9,7 @@
 
 /* big blank "toolbar" rectangle */
 .explorer-toolbar {
-  height: 32px;
+  height: 36px;
   background: var(--main-hot-pink-color);
   border-bottom: 2px solid var(--main-blue-color);
 }

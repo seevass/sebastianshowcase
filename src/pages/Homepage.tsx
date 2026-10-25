@@ -47,7 +47,7 @@ function Homepage() {
 
         <AppShell.Navbar className="navBar" p="sm">
           <Window
-            title="me.exe"
+            title="me.txt"
             scroll={false}
             minWidth="222px"
             minHeight="90px"
@@ -68,8 +68,9 @@ function Homepage() {
         <AppShell.Main className="main">
           <Box p="sm">
             <Window
-              title="tv.exe"
+              title="browser.exe"
               width="min(600px, 100%)"
+              bg="var(--main-white-color)"
               scroll={false}
               style={{
                 maxHeight: isDesktop

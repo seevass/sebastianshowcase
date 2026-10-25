@@ -1,7 +1,7 @@
 .watch {
   container-type: inline-size; /* lets the layout react to the window's width */
   background: var(--main-white-color);
-  color: var(--sub-blue-color);
+  color: var(--main-blue-color);
 }
 
 /* ---------- fake browser bar ---------- */
@@ -10,7 +10,7 @@
   align-items: center;
   gap: 8px;
   padding: 4px 8px;
-  background: var(--sub-blue-color);
+  background: var(--main-blue-color);
   color: var(--main-white-color);
   pointer-events: none;
   user-select: none;
@@ -30,28 +30,26 @@
 
 /* ---------- fake site header ---------- */
 .watch-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr minmax(90px, 450px) 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
   padding: 6px 8px;
-  border-bottom: 2px solid var(--sub-blue-color);
+  border-bottom: 2px solid var(--main-blue-color);
   pointer-events: none;
   user-select: none;
   cursor: default;
 }
 
 .watch-logo {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  font-family: var(--mantine-font-family-headings);
-  font-size: var(--mantine-font-size-xl);
-  line-height: 1;
+  justify-self: start; /* logo stays in the left column */
+  pointer-events: auto;
+  position: relative;
+  top: 2px;
 }
 
 .watch-logo-block {
-  padding: 2px 6px;
+  padding: 0px 6px;
   background: var(--main-hot-pink-color);
   color: var(--main-white-color);
 }
@@ -63,7 +61,7 @@
   flex: 0 1 220px;
   min-width: 0;
   padding: 2px 8px;
-  background: #fff;
+  background: var(--main-white-color);
   border: 2px solid var(--sub-blue-color);
 }
 
@@ -94,6 +92,13 @@
 }
 
 /* ---------- title, channel row ---------- */
+
+.watch-player {
+  position: relative;
+  width: 100%;
+  background: var(--main-blue-color);
+}
+
 .watch-title {
   margin: 10px 0 6px;
   font-family: var(--mantine-font-family-headings);
@@ -112,7 +117,9 @@
   height: 32px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--main-pink-color);
+  object-fit: cover;
+  display: block;
+  background: var(--sub-white-color);
 }
 
 .watch-avatar-sm {
@@ -121,17 +128,17 @@
 }
 
 .watch-open {
-  margin-left: auto;
-  padding: 4px 14px;
+  padding: 12px 14px;
   border: none;
   background: var(--main-hot-pink-color);
   color: var(--main-white-color);
   font: inherit;
   cursor: pointer;
+  border-radius: 100px;
 }
 
 .watch-open:disabled {
-  background: var(--main-pink-color);
+  background: var(--sub-white-color);
   cursor: default;
 }
 
@@ -139,8 +146,8 @@
 .watch-description {
   margin-top: 10px;
   padding: 8px;
-  background: #fff;
-  border: 2px solid var(--sub-blue-color);
+  background: var(--main-white-color);
+  border: 2px solid var(--main-blue-color);
 }
 
 .watch-tags {
@@ -158,7 +165,6 @@
 
 .watch-comments-title {
   margin-bottom: 8px;
-  font-weight: 700;
 }
 
 .watch-comment {

@@ -8,69 +8,31 @@ import { openProject } from "../helpers/projects";
 import TvPlayer from "./TvPlayer";
 import { useProject } from "./ProjectContext";
 import "./WatchPage.css";
-
-// ---- Fake content: edit these freely ----
-const RECOMMENDED = [
-  {
-    color: "var(--main-pink-color)",
-    title: "I turned my keyboard into a toaster",
-    meta: "seabass · 1.2M views",
-  },
-  {
-    color: "var(--main-yellow-color)",
-    title: "10 hours of koi swimming (relaxing)",
-    meta: "koi_lover · 340K views",
-  },
-  {
-    color: "var(--main-green-color)",
-    title: "Why my code only works on Tuesdays",
-    meta: "debugging_dave · 88K views",
-  },
-  {
-    color: "var(--main-hot-pink-color)",
-    title: "Rating every font I have ever used",
-    meta: "typenerd · 2.1M views",
-  },
-  {
-    color: "var(--main-blue-color)",
-    title: "Unboxing a very small box",
-    meta: "unboxer99 · 12K views",
-  },
-  {
-    color: "var(--main-pink-color)",
-    title: "Gaming chair review (I broke it)",
-    meta: "seabass · 560K views",
-  },
-];
-
-const COMMENTS = [
-  {
-    user: "keebfan99",
-    color: "var(--main-green-color)",
-    text: "this is so cool, where can i get those keycaps",
-  },
-  { user: "xX_koilover_Xx", color: "var(--main-yellow-color)", text: "first!" },
-  {
-    user: "mom",
-    color: "var(--main-pink-color)",
-    text: "proud of you sweetie, call me back",
-  },
-  {
-    user: "debugging_dave",
-    color: "var(--main-hot-pink-color)",
-    text: "who's here in 2026",
-  },
-];
-// -----------------------------------------
+import RedactedText from "./RedactedText";
+import { Text } from "@mantine/core";
+import { images } from "../helpers/images";
+import { useMemo, useState } from "react";
+import {
+  COMMENTS,
+  RECOMMENDED,
+  randomSubset,
+  shuffle,
+} from "../helpers/fakeContent";
 
 function WatchPage() {
   const { active } = useProject();
+  const comments = useMemo(
+    () => (active ? randomSubset(COMMENTS, 1) : []),
+    [active?.id],
+  );
+  const related = useMemo(() => shuffle(RECOMMENDED), [active?.id]);
 
-  const url = `http://www.seabass.tv/${active ? `watch?v=${active.id}` : ""}`;
+  const url = active
+    ? `http://www.seabass.tv/watch?v=${active.id}`
+    : "http://www.seabass.tv/";
 
   return (
     <div className="watch">
-      {/* fake browser bar: not clickable */}
       <div className="watch-chrome" aria-hidden="true">
         <IconArrowLeft size={16} />
         <IconArrowRight size={16} />
@@ -81,7 +43,16 @@ function WatchPage() {
       {/* fake site header: logo + search, not clickable */}
       <div className="watch-header" aria-hidden="true">
         <div className="watch-logo">
-          Sea<span className="watch-logo-block">bass</span>
+          <Text fz="xl">
+            <RedactedText from={20} to={100} speed={150} weight={700}>
+              Sea
+            </RedactedText>
+            <span className="watch-logo-block">
+              <RedactedText from={20} to={100} speed={150} weight={700}>
+                Bass
+              </RedactedText>
+            </span>
+          </Text>
         </div>
         <div className="watch-search">
           <span>Search</span>
@@ -91,15 +62,23 @@ function WatchPage() {
 
       <div className="watch-body">
         <div className="watch-main">
-          <TvPlayer />
-
-          <div className="watch-title">
-            {active?.name ?? "Select a project"}
+          <div className="watch-player">
+            <TvPlayer />
           </div>
 
+          <Text className="watch-title" fz="lg" fw={700} ff="Franklin Gothic">
+            {active?.name ?? "Select-A-Project!"}
+          </Text>
+
           <div className="watch-channel">
-            <div className="watch-avatar" aria-hidden="true" />
-            <span className="watch-channel-name">Sebastian Cruz</span>
+            <img
+              className="watch-avatar"
+              src={images.profilePic}
+              alt="Profile"
+            />
+            <Text fw={700} ff="Franklin Gothic">
+              Sebastian Cruz
+            </Text>
             <button
               className="watch-open"
               disabled={!active}
@@ -120,10 +99,15 @@ function WatchPage() {
           </div>
 
           <div className="watch-comments" aria-hidden="true">
-            <div className="watch-comments-title">
-              {COMMENTS.length} Comments
-            </div>
-            {COMMENTS.map((c) => (
+            <Text
+              className="watch-comments-title"
+              fw={700}
+              ff="Franklin Gothic"
+              fz="lg"
+            >
+              {comments.length} {comments.length === 1 ? "Comment" : "Comments"}
+            </Text>
+            {comments.map((c) => (
               <div key={c.user} className="watch-comment">
                 <div
                   className="watch-avatar watch-avatar-sm"
@@ -140,7 +124,7 @@ function WatchPage() {
 
         {/* fake recommended column: only shows when the window is wide enough */}
         <aside className="watch-related" aria-hidden="true">
-          {RECOMMENDED.map((r) => (
+          {related.map((r) => (
             <div key={r.title} className="watch-rec">
               <div
                 className="watch-rec-thumb"
