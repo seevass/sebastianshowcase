@@ -14,32 +14,32 @@ export const RECOMMENDED: RecommendedVideo[] = [
   {
     color: "var(--main-pink-color)",
     title: "I turned my keyboard into a toaster",
-    meta: "seabass · 1.2M views",
+    meta: "seabass\n1.2M views",
   },
   {
     color: "var(--main-yellow-color)",
     title: "10 hours of koi swimming (relaxing)",
-    meta: "koi_lover · 340K views",
+    meta: "koi_lover\n340K views",
   },
   {
-    color: "var(--main-green-color)",
+    color: "var(--main-yellow-color)",
     title: "Why my code only works on Tuesdays",
-    meta: "debugging_dave · 88K views",
+    meta: "debugging_dave\n88K views",
   },
   {
     color: "var(--main-hot-pink-color)",
     title: "Rating every font I have ever used",
-    meta: "typenerd · 2.1M views",
+    meta: "typenerd\n2.1M views",
   },
   {
     color: "var(--main-blue-color)",
     title: "Unboxing a very small box",
-    meta: "unboxer99 · 12K views",
+    meta: "unboxer99\n12K views",
   },
   {
     color: "var(--main-pink-color)",
     title: "Gaming chair review (I broke it)",
-    meta: "seabass · 560K views",
+    meta: "seabass\n560K views",
   },
 ];
 

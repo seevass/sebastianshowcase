@@ -82,9 +82,9 @@
   cursor: default;
 }
 
-@container (min-width: 560px) {
+@container (min-width: 990px) {
   .watch-body {
-    grid-template-columns: minmax(0, 1fr) 190px;
+    grid-template-columns: minmax(0, 1fr) clamp(300px, 33%, 500px);
   }
   .watch-related {
     display: flex;
@@ -184,8 +184,8 @@
 }
 
 .watch-rec-thumb {
-  width: 72px;
-  height: 46px;
+  width: clamp(72px, 22cqw, 320px);
+  aspect-ratio: 16 / 9;
   flex-shrink: 0;
 }
 
@@ -193,12 +193,9 @@
   min-width: 0;
 }
 
-.watch-rec-title {
-  line-height: 1.2;
-}
-
 .watch-rec-meta {
   margin-top: 2px;
   color: var(--main-blue-color);
   font-size: var(--mantine-font-size-xs);
+  white-space: pre-line;
 }

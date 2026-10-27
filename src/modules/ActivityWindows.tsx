@@ -16,8 +16,14 @@ function Folder({ title, address, items }: FolderProps) {
   const { setSelectedId } = useProject();
 
   return (
-    <div onClick={() => setSelectedId(null)}>
-      <Window title={title} width="100%" bg="var(--main-white-color)">
+    <div style={{ display: "contents" }} onClick={() => setSelectedId(null)}>
+      <Window
+        title={title}
+        width="100%"
+        minHeight="225px"
+        scroll={false}
+        bg="var(--main-white-color)"
+      >
         <ActivityList address={address} items={items} />
       </Window>
     </div>
@@ -26,7 +32,7 @@ function Folder({ title, address, items }: FolderProps) {
 
 function ActivityWindows() {
   return (
-    <Stack gap="md">
+    <Stack gap="md" style={{ overflow: "hidden" }}>
       <Folder title="projects" address="P:\Projects" items={projectItems} />
       <Folder title="passions" address="P:\Passions" items={passionItems} />
     </Stack>

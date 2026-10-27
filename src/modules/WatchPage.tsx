@@ -29,7 +29,7 @@ function WatchPage() {
 
   const url = active
     ? `http://www.seabass.tv/watch?v=${active.id}`
-    : "http://www.seabass.tv/";
+    : "http://www.seabass.tv/watch?v=select-a-project";
 
   return (
     <div className="watch">
@@ -55,7 +55,7 @@ function WatchPage() {
           </Text>
         </div>
         <div className="watch-search">
-          <span>Search</span>
+          <Text>Search</Text>
           <IconSearch size={16} />
         </div>
       </div>
@@ -114,25 +114,28 @@ function WatchPage() {
                   style={{ background: c.color }}
                 />
                 <div>
-                  <span className="watch-comment-user">{c.user}</span>
-                  <div>{c.text}</div>
+                  <Text className="watch-comment-user">{c.user}</Text>
+                  <Text>{c.text}</Text>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* fake recommended column: only shows when the window is wide enough */}
         <aside className="watch-related" aria-hidden="true">
-          {related.map((r) => (
+          {related.slice(0, 10).map((r) => (
             <div key={r.title} className="watch-rec">
               <div
                 className="watch-rec-thumb"
                 style={{ background: r.color }}
               />
               <div className="watch-rec-text">
-                <div className="watch-rec-title">{r.title}</div>
-                <div className="watch-rec-meta">{r.meta}</div>
+                <Text className="watch-rec-title" fw={700}>
+                  {r.title}
+                </Text>
+                <Text className="watch-rec-meta" fz="sm">
+                  {r.meta}
+                </Text>
               </div>
             </div>
           ))}
