@@ -7,8 +7,6 @@ import { images } from "../helpers/images";
 import Taskbar from "../modules/Taskbar";
 import Window from "../modules/Window";
 import { ProjectProvider } from "../modules/ProjectContext";
-import TvPlayer from "../modules/TvPlayer";
-import ProjectInfo from "../modules/ProjectInfo";
 import ActivityWindows from "../modules/ActivityWindows";
 import HomeAbout from "../modules/HomeAbout";
 import WatchPage from "../modules/WatchPage";
