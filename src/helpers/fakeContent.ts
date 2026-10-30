@@ -12,53 +12,108 @@ export interface FakeComment {
 
 export const RECOMMENDED: RecommendedVideo[] = [
   {
+    color: "var(--main-yellow-color)",
+    title: "How to sew a pair of pants (Step-by-step tutorial)",
+    meta: "Seabass\n6.7k views",
+  },
+  {
     color: "var(--main-pink-color)",
-    title: "I turned my keyboard into a toaster",
-    meta: "seabass\n1.2M views",
-  },
-  {
-    color: "var(--main-yellow-color)",
-    title: "10 hours of koi swimming (relaxing)",
-    meta: "koi_lover\n340K views",
-  },
-  {
-    color: "var(--main-yellow-color)",
-    title: "Why my code only works on Tuesdays",
-    meta: "debugging_dave\n88K views",
-  },
-  {
-    color: "var(--main-hot-pink-color)",
-    title: "Rating every font I have ever used",
-    meta: "typenerd\n2.1M views",
+    title: "Day in the life of a private chef",
+    meta: "fuegoaal3\n12k views",
   },
   {
     color: "var(--main-blue-color)",
-    title: "Unboxing a very small box",
-    meta: "unboxer99\n12K views",
+    title: "Best of: Wolfer (2026) FPS Montage",
+    meta: "Wolfer\n5.1M views",
+  },
+  {
+    color: "var(--main-hot-pink-color)",
+    title: "Winning my first Riftbound and bouldering tournament in the same day",
+    meta: "TheFirstPoro\n531K views",
+  },
+  {
+    color: "var(--main-yellow-color)",
+    title: "Starting My Golf Career with $1",
+    meta: "MetaciniAlfredo\n181M views",
   },
   {
     color: "var(--main-pink-color)",
-    title: "Gaming chair review (I broke it)",
-    meta: "seabass\n560K views",
+    title: "Making 100 Buffalo Chicken Sandwiches in 1 Hour",
+    meta: "Krusher99\n67.9K views",
+  },
+  {
+    color: "var(--main-blue-color)",
+    title: "How to Avoid The Black Plague (From a Registered Nurse)",
+    meta: "RCP\n1.4M views",
+  },
+  {
+    color: "var(--main-hot-pink-color)",
+    title: "Will My Coffee Prevent the Shibuya Incident?",
+    meta: "GermanToaster\n67.9K views",
+  },
+  {
+    color: "var(--main-yellow-color)",
+    title: "How I Ended Up as the CEO of a Fortune 500 Boba Company",
+    meta: "PocketPapa.exe\n67.9K views",
+  },
+  {
+    color: "var(--main-pink-color)",
+    title: "Making a Life Size Gundam in My Garage (Working!)",
+    meta: "nautalisk.\n67.9K views",
+  },
+  {
+    color: "var(--main-blue-color)",
+    title: "Trying the 10 Course Tasting Menu at the Most Famous Steakhouse in Japan",
+    meta: "SovietMight\n48M views",
+  },
+  {
+    color: "var(--main-hot-pink-color)",
+    title: "Hosting the World's Largest Magic Cube Event in My Backyard",
+    meta: "Chris\n504M views",
+  },
+  {
+    color: "var(--main-yellow-color)",
+    title: "Training my dog to compete in the Olympic Gymnastic Team",
+    meta: "xXSkillz4DayzXx\n4.1K views",
+  },
+  {
+    color: "var(--main-pink-color)",
+    title: "From F1 Engineer to Full-Time DJ",
+    meta: "GiraffeLicker909\n826K views",
+  },
+  {
+    color: "var(--main-blue-color)",
+    title: "Lawyer Reacts to the Lastest Ban on Sports Betting in the US",
+    meta: "dynhz\n200K views",
   },
 ];
 
 export const COMMENTS: FakeComment[] = [
   {
-    user: "keebfan99",
-    color: "var(--main-green-color)",
-    text: "this is so cool, where can i get those keycaps",
+    user: "Wolfer",
+    color: "var(--main-yellow-color)",
+    text: "Came looking for a warrior in keyboard armor, stayed for the video",
   },
-  { user: "xX_koilover_Xx", color: "var(--main-yellow-color)", text: "first!" },
+  { user: "Gruber_Dog", color: "var(--main-pink-color)", text: "Watching this while eating some whipped cream!" },
   {
-    user: "mom",
-    color: "var(--main-pink-color)",
-    text: "proud of you sweetie, call me back",
+    user: "zeusieDaPiggy",
+    color: "var(--main-blue-color)",
+    text: "perfect video to fall asleep to, thanks for the content",
   },
   {
-    user: "debugging_dave",
+    user: "Fuegoaal3",
     color: "var(--main-hot-pink-color)",
-    text: "who's here in 2026",
+    text: "How does this affect LeBron's legacy?",
+  },
+  {
+    user: "MetaciniAlfredo",
+    color: "var(--main-yellow-color)",
+    text: "CAN THIS COMMENT GET 67 LIKES???",
+  },
+  {
+    user: "Krusher99",
+    color: "var(--main-pink-color)",
+    text: "Buffalo chicken is mid",
   },
 ];
 
