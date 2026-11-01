@@ -173,6 +173,11 @@
   margin-bottom: 8px;
 }
 
+.watch-comment-text {
+  position: relative;
+  top: -3px;
+}
+
 .watch-comment-user {
   font-weight: 700;
 }

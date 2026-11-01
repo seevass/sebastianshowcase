@@ -55,6 +55,10 @@
   pointer-events: none;
 }
 
+.footer .taskbar {
+  pointer-events: auto;
+}
+
 .aside .window {
   pointer-events: auto;
 }

@@ -113,7 +113,7 @@ function WatchPage() {
                   className="watch-avatar watch-avatar-sm"
                   style={{ background: c.color }}
                 />
-                <div>
+                <div className="watch-comment-text">
                   <Text className="watch-comment-user">{c.user}</Text>
                   <Text>{c.text}</Text>
                 </div>

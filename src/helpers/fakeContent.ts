@@ -28,7 +28,8 @@ export const RECOMMENDED: RecommendedVideo[] = [
   },
   {
     color: "var(--main-hot-pink-color)",
-    title: "Winning my first Riftbound and bouldering tournament in the same day",
+    title:
+      "Winning my first Riftbound and bouldering tournament in the same day",
     meta: "TheFirstPoro\n531K views",
   },
   {
@@ -63,7 +64,8 @@ export const RECOMMENDED: RecommendedVideo[] = [
   },
   {
     color: "var(--main-blue-color)",
-    title: "Trying the 10 Course Tasting Menu at the Most Famous Steakhouse in Japan",
+    title:
+      "Trying the 10 Course Tasting Menu at the Most Famous Steakhouse in Japan",
     meta: "SovietMight\n48M views",
   },
   {
@@ -94,7 +96,11 @@ export const COMMENTS: FakeComment[] = [
     color: "var(--main-yellow-color)",
     text: "Came looking for a warrior in keyboard armor, stayed for the video",
   },
-  { user: "Gruber_Dog", color: "var(--main-pink-color)", text: "Watching this while eating some whipped cream!" },
+  {
+    user: "Gruber_Dog",
+    color: "var(--main-pink-color)",
+    text: "Watching this while eating some whipped cream!",
+  },
   {
     user: "zeusieDaPiggy",
     color: "var(--main-blue-color)",
@@ -114,6 +120,11 @@ export const COMMENTS: FakeComment[] = [
     user: "Krusher99",
     color: "var(--main-pink-color)",
     text: "Buffalo chicken is mid",
+  },
+  {
+    user: "Cicero_philosophy",
+    color: "var(--main-blue-color)",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 

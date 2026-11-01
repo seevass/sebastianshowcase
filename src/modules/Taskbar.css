@@ -28,3 +28,36 @@
   color: var(--main-white-color);
   font-size: 0.85rem;
 }
+
+/* ---------- link buttons ---------- */
+.taskbar-links {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  height: 100%;
+  padding: 3px 0;
+  min-width: 0;
+  overflow-x: auto; /* scrolls sideways if the screen is too narrow */
+  scrollbar-width: none; /* hides the scrollbar in Firefox */
+}
+
+.taskbar-links::-webkit-scrollbar {
+  display: none; /* hides the scrollbar in Chrome and Safari */
+}
+
+.taskbar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border-radius: 3px;
+  background: var(--main-blue-color);
+  color: var(--main-white-color);
+  font-size: var(--mantine-font-size-sm);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.taskbar-link:hover {
+  background: var(--main-yellow-color);
+}
