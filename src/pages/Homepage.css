@@ -59,6 +59,10 @@
   pointer-events: auto;
 }
 
+.footer {
+  z-index: 400;
+}
+
 .aside .window {
   pointer-events: auto;
 }
@@ -69,13 +73,6 @@
 
 .nameTitle {
   color: var(--main-white-color);
-}
-
-/* Optional retro text treatment */
-.xp-text {
-  font-family: Tahoma, Verdana, Geneva, sans-serif;
-  -webkit-font-smoothing: none;
-  text-rendering: optimizeSpeed;
 }
 
 .mantine-Burger-root {

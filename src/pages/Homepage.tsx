@@ -67,7 +67,7 @@ function Homepage() {
           <Box p="sm">
             <Window
               title="browser.exe"
-              width="min(600px, 100%)"
+              width="100%"
               bg="var(--main-white-color)"
               scroll={false}
               style={{
