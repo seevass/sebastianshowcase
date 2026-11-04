@@ -6,25 +6,23 @@ import { projectItems, passionItems } from "../helpers/projects";
 import type { Project } from "../helpers/projects";
 
 interface FolderProps {
-  title: string; // window title
-  address: string; // text in the address bar
+  title: string;
+  address: string;
   items: Project[];
+  toolbarColor?: string;
 }
 
-// One explorer window. Clicking anywhere in it (except a row) clears the selection.
-function Folder({ title, address, items }: FolderProps) {
+function Folder({ title, address, items, toolbarColor }: FolderProps) {
   const { setSelectedId } = useProject();
 
   return (
     <div style={{ display: "contents" }} onClick={() => setSelectedId(null)}>
-      <Window
-        title={title}
-        width="100%"
-        minHeight="225px"
-        scroll={false}
-        bg="var(--main-white-color)"
-      >
-        <ActivityList address={address} items={items} />
+      <Window title={title} width="100%">
+        <ActivityList
+          address={address}
+          items={items}
+          toolbarColor={toolbarColor}
+        />
       </Window>
     </div>
   );
@@ -32,9 +30,19 @@ function Folder({ title, address, items }: FolderProps) {
 
 function ActivityWindows() {
   return (
-    <Stack gap="md" style={{ overflow: "hidden" }}>
-      <Folder title="projects" address="P:\Projects" items={projectItems} />
-      <Folder title="passions" address="P:\Passions" items={passionItems} />
+    <Stack gap="md" mah="calc(100dvh - 154px)">
+      <Folder
+        title="projects"
+        address="P:\Projects"
+        items={projectItems}
+        toolbarColor="var(--main-hot-pink-color)"
+      />
+      <Folder
+        title="passions"
+        address="P:\Passions"
+        items={passionItems}
+        toolbarColor="var(--main-pink-color)"
+      />
     </Stack>
   );
 }

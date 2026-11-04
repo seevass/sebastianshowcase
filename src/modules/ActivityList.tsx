@@ -7,14 +7,15 @@ import "./ActivityList.css";
 interface ActivityListProps {
   address: string; // the text shown in the address bar
   items: Project[]; // the rows
+  toolbarColor?: string; // optional color for the top bar
 }
 
-function ActivityList({ address, items }: ActivityListProps) {
+function ActivityList({ address, items, toolbarColor }: ActivityListProps) {
   const { selectedId, setSelectedId } = useProject();
 
   return (
     <div className="explorer">
-      <div className="explorer-toolbar" />
+      <div className="explorer-toolbar" style={{ background: toolbarColor }} />
 
       <div className="explorer-address">
         <span>Address</span>
