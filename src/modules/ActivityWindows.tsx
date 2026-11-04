@@ -4,6 +4,7 @@ import Window from "./Window";
 import { useProject } from "./ProjectContext";
 import { projectItems, passionItems } from "../helpers/projects";
 import type { Project } from "../helpers/projects";
+import FakeAd from "./FakeAd";
 
 interface FolderProps {
   title: string;
@@ -17,7 +18,13 @@ function Folder({ title, address, items, toolbarColor }: FolderProps) {
 
   return (
     <div style={{ display: "contents" }} onClick={() => setSelectedId(null)}>
-      <Window title={title} width="100%">
+      <Window
+        title={title}
+        width="100%"
+        minHeight="250px"
+        minWidth="100%"
+        bg="var(--main-white-color)"
+      >
         <ActivityList
           address={address}
           items={items}
@@ -31,6 +38,7 @@ function Folder({ title, address, items, toolbarColor }: FolderProps) {
 function ActivityWindows() {
   return (
     <Stack gap="md" mah="calc(100dvh - 154px)">
+      <FakeAd items={projectItems} />
       <Folder
         title="projects"
         address="P:\Projects"

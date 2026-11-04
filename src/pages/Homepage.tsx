@@ -49,6 +49,7 @@ function Homepage() {
             scroll={false}
             minWidth="222px"
             minHeight="90px"
+            bg="var(--sub-blue-color)"
           >
             <Box p="sm">
               <HomeAbout />

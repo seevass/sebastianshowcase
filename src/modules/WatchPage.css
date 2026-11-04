@@ -101,9 +101,6 @@
 
 .watch-title {
   margin: 10px 0 6px;
-  font-family: var(--mantine-font-family-headings);
-  font-size: var(--mantine-h3-font-size);
-  line-height: 1.2;
 }
 
 .watch-channel {
@@ -135,6 +132,11 @@
   font: inherit;
   cursor: pointer;
   border-radius: 100px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.watch-open:hover {
+  background: var(--main-yellow-color);
 }
 
 .watch-open:disabled {
