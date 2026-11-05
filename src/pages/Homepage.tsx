@@ -21,8 +21,8 @@ function Homepage() {
     <ProjectProvider>
       <AppShell
         layout="default"
-        header={{ height: { base: 60, lg: 0 } }}
-        footer={{ height: { base: 60, lg: 40 } }}
+        header={{ height: 0 }}
+        footer={{ height: { base: 0, lg: 40 } }}
         navbar={{
           width: 300,
           breakpoint: "lg",
@@ -31,7 +31,7 @@ function Homepage() {
         withBorder={false}
         aside={{ width: 400, breakpoint: "lg", collapsed: { mobile: true } }}
       >
-        {/* One burger for open + close. Fixed top-left, above the sidebar and page. */}
+        {/* TODO: allow to close the burger menu when clicking outside of it */}
         <Burger
           opened={opened}
           onClick={toggle}
@@ -42,14 +42,14 @@ function Homepage() {
           left="var(--ui-header-pad)"
           style={{ zIndex: 300 }}
         />
-
         <AppShell.Navbar className="navBar" p="sm">
           <Window
-            title="me.txt"
+            title="namecard.txt"
             scroll={false}
             minWidth="222px"
             minHeight="90px"
-            bg="var(--sub-blue-color)"
+            bg="var(--main-blue-color)"
+            maxHeight="200px"
           >
             <Box p="sm">
               <HomeAbout />
@@ -58,17 +58,18 @@ function Homepage() {
 
           {isDesktop && (
             <>
-              <Space h="sm" />
+              <Space h="md" />
               <ActivityWindows />
             </>
           )}
         </AppShell.Navbar>
-
         <AppShell.Main className="main">
           <Box p="sm">
             <Window
-              title="browser.exe"
+              title="browser-explorer.exe"
               width="100%"
+              minWidth="310px"
+              minHeight="395px"
               bg="var(--main-white-color)"
               scroll={false}
               style={{
@@ -85,7 +86,6 @@ function Homepage() {
             {!isDesktop && <ActivityWindows />}
           </Box>
         </AppShell.Main>
-
         <AppShell.Aside visibleFrom="lg" className="aside" p="sm">
           <Window
             title="tattoo.gif"
@@ -103,11 +103,12 @@ function Homepage() {
             />
           </Window>
         </AppShell.Aside>
-
         <AppShell.Footer className="footer">
-          <Box h="100%">
-            <Taskbar />
-          </Box>
+          {isDesktop && (
+            <Box h="100%">
+              <Taskbar />
+            </Box>
+          )}
         </AppShell.Footer>
       </AppShell>
     </ProjectProvider>

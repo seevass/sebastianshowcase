@@ -66,8 +66,8 @@ function WatchPage() {
             <TvPlayer />
           </div>
 
-          <Text className="watch-title" fz="lg" fw={700} ff="Franklin Gothic">
-            {active?.name ?? "Select-A-Project!"}
+          <Text className="watch-title" fz="lg" fw={700}>
+            {active?.name ?? "Choose a Project!"}
           </Text>
 
           <div className="watch-channel">

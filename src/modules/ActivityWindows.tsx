@@ -5,6 +5,7 @@ import { useProject } from "./ProjectContext";
 import { projectItems, passionItems } from "../helpers/projects";
 import type { Project } from "../helpers/projects";
 import FakeAd from "./FakeAd";
+import { useIsDesktop } from "../theme";
 
 interface FolderProps {
   title: string;
@@ -21,8 +22,9 @@ function Folder({ title, address, items, toolbarColor }: FolderProps) {
       <Window
         title={title}
         width="100%"
-        minHeight="250px"
+        minHeight="230px"
         minWidth="100%"
+        maxHeight="300px"
         bg="var(--main-white-color)"
       >
         <ActivityList
@@ -36,17 +38,18 @@ function Folder({ title, address, items, toolbarColor }: FolderProps) {
 }
 
 function ActivityWindows() {
+  const isDesktop = useIsDesktop();
   return (
     <Stack gap="md" mah="calc(100dvh - 154px)">
-      <FakeAd items={projectItems} />
+      {isDesktop && <FakeAd items={projectItems} />}
       <Folder
-        title="projects"
+        title="project-explorer.exe"
         address="P:\Projects"
         items={projectItems}
         toolbarColor="var(--main-hot-pink-color)"
       />
       <Folder
-        title="passions"
+        title="passion-explorer.exe"
         address="P:\Passions"
         items={passionItems}
         toolbarColor="var(--main-pink-color)"

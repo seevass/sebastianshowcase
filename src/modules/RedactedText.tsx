@@ -63,6 +63,7 @@ function RedactedText({
         fontFamily: `${family(level)}, Georgia, serif`,
         fontWeight: weight,
         fontStyle: italic ? "italic" : "normal",
+        userSelect: "none",
       }}
     >
       {children}

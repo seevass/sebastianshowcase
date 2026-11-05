@@ -11,6 +11,8 @@ interface WindowProps {
   height?: CSSProperties["height"];
   minWidth?: CSSProperties["minWidth"];
   minHeight?: CSSProperties["minHeight"];
+  maxWidth?: CSSProperties["maxWidth"];
+  maxHeight?: CSSProperties["maxHeight"];
   bg?: string;
   align?: "left" | "center" | "right";
   scroll?: boolean;
@@ -24,6 +26,8 @@ function Window({
   height = "auto",
   minWidth,
   minHeight,
+  maxWidth,
+  maxHeight,
   bg,
   align = "left",
   scroll = true,
@@ -32,7 +36,15 @@ function Window({
   return (
     <Box
       className="window"
-      style={{ width, height, minWidth, minHeight, ...style }}
+      style={{
+        width,
+        height,
+        minWidth,
+        minHeight,
+        maxWidth,
+        maxHeight,
+        ...style,
+      }}
       bg={bg}
       ml={align === "left" ? undefined : "auto"}
       mr={align === "right" ? undefined : "auto"}

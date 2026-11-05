@@ -11,10 +11,9 @@ function HomeAbout() {
       </Text>
       <Text
         c="var(--blended-bg-color)"
-        ff="Franklin Gothic"
         fz="sm"
         fw={900}
-        style={{ whiteSpace: "nowrap" }}
+        style={{ whiteSpace: "nowrap", userSelect: "none" }}
       >
         [unstable text, hover at your own risk!]
       </Text>

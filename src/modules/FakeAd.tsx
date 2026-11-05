@@ -1,5 +1,5 @@
 import { Button, Text } from "@mantine/core";
-import { IconArrowDown, IconGift } from "@tabler/icons-react";
+import { IconArrowDown } from "@tabler/icons-react";
 import type { Project } from "../helpers/projects";
 import { useProject } from "./ProjectContext";
 import Window from "./Window";
@@ -21,37 +21,49 @@ function FakeAd({ items }: { items: Project[] }) {
   return (
     <div className="fake-ad">
       <Window
-        title="congratulations.exe"
+        title="free-projects.js"
         width="100%"
         bg="var(--main-yellow-color)"
         scroll={false}
+        style={{ resize: "none" }}
       >
+        <Text
+          className="fake-ad-title"
+          fz="lg"
+          fw={900}
+          c="var(--main-hot-pink-color)"
+        >
+          CONGRATULATIONS
+        </Text>
         <div className="fake-ad-body">
-          <Text className="fake-ad-headline">
-            {picked ? "Prize claimed!" : "You are visitor #1,000,000!"}
+          <Text fw={700} fz="lg">
+            1,000,000th visitor!
           </Text>
 
-          <Text className="fake-ad-sub">
-            {picked
-              ? "Now click a project below to open it"
-              : "Claim your prize by clicking a project below"}
-          </Text>
+          <Text fw={700}>You have won a FREE project!</Text>
 
-          <Button
-            className="fake-ad-button"
-            leftSection={<IconGift size={18} />}
-            onClick={claim}
-          >
+          <Text fw={900}>CLICK HERE TO CONFIRM</Text>
+
+          <Button className="fake-ad-button" onClick={claim}>
             {picked ? "Claim another" : "Claim prize"}
           </Button>
 
           <IconArrowDown
             className="fake-ad-arrow"
-            size={18}
+            size={48}
             aria-hidden="true"
+            stroke={3}
           />
+
+          <Text fw={700}>
+            {picked
+              ? 'ONE MORE STEP! "OPEN PROJECT" TO COLLECT YOUR REWARD.'
+              : ""}
+          </Text>
         </div>
-        <div className="fake-ad-tag">Ad by SeabassAds</div>
+        <Text className="fake-ad-tag" fz="xs" c="var(--main-blue-color)">
+          100% virus-free!
+        </Text>
       </Window>
     </div>
   );

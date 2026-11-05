@@ -1,63 +1,52 @@
-/* recolor the shared Window so the ad looks like it doesn't belong */
 .fake-ad .window {
   border-color: var(--main-hot-pink-color);
-  animation: fake-ad-border 1s steps(1) infinite;
 }
 
 .fake-ad .window-title {
   background: var(--main-hot-pink-color);
 }
 
+.fake-ad-title {
+  text-align: center;
+  padding: 8px;
+  transform: scale(1.2);
+  user-select: none;
+}
+
 .fake-ad-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 8px;
+  gap: 8px;
+  padding: 12px;
   text-align: center;
-  color: var(--sub-blue-color);
-}
-
-.fake-ad-headline {
-  font-size: var(--mantine-font-size-lg);
-  line-height: 1.2;
-}
-
-.fake-ad-sub {
-  font-size: var(--mantine-font-size-sm);
+  color: var(--main-blue-color);
+  user-select: none;
 }
 
 .fake-ad-button {
   height: auto;
+  width: 200px;
   padding: 8px 20px;
-  background: var(--main-green-color);
+  background: var(--main-hot-pink-color);
   color: var(--main-white-color);
-  font-size: var(--mantine-font-size-md);
+  border-radius: 0;
 }
 
 .fake-ad-button:hover {
-  background: var(--main-hot-pink-color);
+  background: var(--main-blue-color);
 }
 
 .fake-ad-arrow {
   animation: fake-ad-bounce 0.8s steps(1) infinite;
+  color: var(--main-hot-pink-color);
+  user-select: none;
 }
 
 .fake-ad-tag {
   padding: 0 6px 2px;
-  background: var(--main-yellow-color);
-  color: var(--sub-blue-color);
-  font-size: var(--mantine-font-size-xs);
   text-align: right;
-}
-
-@keyframes fake-ad-border {
-  0% {
-    border-color: var(--main-hot-pink-color);
-  }
-  50% {
-    border-color: var(--main-pink-color);
-  }
+  user-select: none;
 }
 
 @keyframes fake-ad-bounce {
@@ -65,12 +54,6 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(4px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fake-ad .window {
-    animation: none;
+    transform: translateY(8px);
   }
 }
